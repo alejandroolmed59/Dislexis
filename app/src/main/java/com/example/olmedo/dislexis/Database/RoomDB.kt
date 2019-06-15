@@ -5,12 +5,13 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.olmedo.dislexis.Entities.User
+import com.example.olmedo.dislexis.Database.daos.UserDAO
+import com.example.olmedo.dislexis.Database.entities.User
 
 @Database(entities = [User::class], version = 2, exportSchema = false)
 public abstract class RoomDB : RoomDatabase() {
 
-    abstract fun userDao():UserDAO
+    abstract fun userDao(): UserDAO
 
     companion object {
         @Volatile

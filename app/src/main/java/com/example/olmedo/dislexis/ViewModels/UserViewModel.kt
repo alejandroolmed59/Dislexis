@@ -1,15 +1,14 @@
-package com.example.olmedo.dislexis.UI
+package com.example.olmedo.dislexis.ViewModels
 
 import android.app.Application
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.example.olmedo.dislexis.Database.RoomDB
-import com.example.olmedo.dislexis.Entities.DTO.userAuthorization
-import com.example.olmedo.dislexis.Entities.User
-import com.example.olmedo.dislexis.Retrofit.UserService
+import com.example.olmedo.dislexis.Database.repositories.Repository
+import com.example.olmedo.dislexis.Database.entities.DTO.userAuthorization
+import com.example.olmedo.dislexis.Database.entities.User
+import com.example.olmedo.dislexis.Network.UserService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -42,7 +41,14 @@ class UserViewModel(private val app: Application) : AndroidViewModel(app) {
     }
 
     fun loginUser(user: String, password: String) = viewModelScope.launch(Dispatchers.IO) {
-        val response = repository.loginUser(userAuthorization(user, password, null, null)).await()
+        val response = repository.loginUser(
+            userAuthorization(
+                user,
+                password,
+                null,
+                null
+            )
+        ).await()
         if (response.isSuccessful) with(response) {
             if (this.code() == 200) {
                 Log.v("status", "succes")

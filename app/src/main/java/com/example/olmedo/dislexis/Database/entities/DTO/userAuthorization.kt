@@ -1,4 +1,4 @@
-package com.example.olmedo.dislexis.Entities.DTO
+package com.example.olmedo.dislexis.Database.entities.DTO
 
 class userAuthorization(
    val username: String,

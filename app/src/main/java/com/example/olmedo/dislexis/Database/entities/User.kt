@@ -1,4 +1,4 @@
-package com.example.olmedo.dislexis.Entities
+package com.example.olmedo.dislexis.Database.entities
 
 //import androidx.room.ColumnInfo
 import androidx.room.Entity

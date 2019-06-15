@@ -1,17 +1,15 @@
-package com.example.olmedo.dislexis.Database
+package com.example.olmedo.dislexis.Database.daos
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
-import androidx.room.Query
-import com.example.olmedo.dislexis.Entities.User
+import com.example.olmedo.dislexis.Database.entities.User
 
 @Dao
 interface UserDAO {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(user:User)
+    suspend fun insert(user: User)
 
    // @Query("SELECT*FROM repos")
    // fun getAllRepos():LiveData<List<GitHubRepo>>
