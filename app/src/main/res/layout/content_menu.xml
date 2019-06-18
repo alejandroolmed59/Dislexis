@@ -23,7 +23,7 @@
         <ImageView
                 android:layout_width="200dp"
                 android:layout_height="100dp"
-                android:src="@drawable/ic_launcher_background"
+                android:src="@drawable/register"
                 android:layout_marginBottom="50dp"
         />
         <EditText
