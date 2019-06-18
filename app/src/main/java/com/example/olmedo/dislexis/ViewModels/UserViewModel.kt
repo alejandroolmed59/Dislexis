@@ -20,37 +20,41 @@ import kotlinx.coroutines.launch
 class UserViewModel(private val app: Application) : AndroidViewModel(app) {
 
     private val repository: Repository
-    //lateinit var userActual: MutableLiveData<UserRetro>
 
     init {
         val userDao = RoomDB.getInstance(app).userDao()
         val userService = UserService.getUserService()
-       // userActual.postValue(UserRetro())
         repository = Repository(userDao, userService)
     }
 
     private suspend fun insert(user: User) = repository.insert(user)
 
 
-    fun registerUser(userAuthorization: userAuthorization) = viewModelScope.launch(Dispatchers.IO) {
+    fun registerUser(userAuthorization: userAuthorization, callback: (Boolean)->Unit) = viewModelScope.launch(Dispatchers.IO) {
+        Log.v("LLEGO", "1")
         val response = repository.registerUser(userAuthorization).await()
+
         if (response.isSuccessful) with(response) {
             if (this.code() == 200) {
-                Log.v("status", "succes")
-                //Toast.makeText(app, "Register exitoso", Toast.LENGTH_LONG).show()
+                Log.v("registerStatus", "succes")
+                Log.v("registerStatus", this.body()?.username)
+                callback(true)
             } else {
-                Log.v("status", "fail")
+                callback(false)
+                Log.v("registerStatus", "fail")
             }
         } else {
-            Log.v("status", "fail")
+            callback(false)
+            Log.v("registerStatus", "fail")
             // Toast.makeText(app, "Error con el registro", Toast.LENGTH_LONG).show()
         }
     }
 
-    fun loginUser(user: String, password: String) = viewModelScope.launch(Dispatchers.IO) {
+    fun loginUser(user: String, password: String, callback: (UserRetro)->Unit) = viewModelScope.launch(Dispatchers.IO) {
         val response = repository.loginUser(
             userAuthorization(
                 user,
+                null,
                 password,
                 null,
                 null
@@ -59,15 +63,10 @@ class UserViewModel(private val app: Application) : AndroidViewModel(app) {
         if (response.isSuccessful) with(response) {
             if (this.code() == 200) {
                 Log.v("statusUser", "succ")
-                val responseUser = repository.getUser(UserLogged(user)).await()
+                val responseUser = repository.getUser(user).await()
                 if(responseUser.isSuccessful) with(responseUser){
                     if(this.code() == 200){
-                        Log.v("respuestaGetUser", this.body()!!._id)
-                        Log.v("respuestaGetUser", this.body()!!.email)
-                        Log.v("respuestaGetUser", this.body()!!.isPaciente)
-                        Log.v("respuestaGetUser", this.body()!!.medicoReferencia)
-                        Log.v("respuestaGetUser", this.body()!!.username)
-                        //userActual.postValue(response.body())
+                        callback(this.body()!!)
                     }
                 }else{
 
@@ -79,20 +78,10 @@ class UserViewModel(private val app: Application) : AndroidViewModel(app) {
             Log.v("statusUser", "fail")
         }
     }
-/*
-    private fun getUserAux(username: String) =  viewModelScope.launch(Dispatchers.IO) {
-        val response = repository.getUser(UserLogged(username)).await()
-        if(response.isSuccessful) with(response){
-            if(this.code() == 200){
-                Log.v("respuestaGetUser", this.body()!!._id)
-                Log.v("respuestaGetUser", this.body()!!.email)
-                Log.v("respuestaGetUser", this.body()!!.isPaciente)
-                Log.v("respuestaGetUser", this.body()!!.medicoReferencia)
-                Log.v("respuestaGetUser", this.body()!!.username)
-                //userActual.postValue(response.body())
-            }
-        }
+
+    fun getPreguntas() = viewModelScope.launch(Dispatchers.IO) {
+
     }
-    */
+
 }
 

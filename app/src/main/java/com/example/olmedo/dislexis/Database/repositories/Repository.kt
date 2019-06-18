@@ -5,6 +5,7 @@ import com.example.olmedo.dislexis.Database.daos.UserDAO
 import com.example.olmedo.dislexis.Database.entities.DTO.userAuthorization
 import com.example.olmedo.dislexis.Database.entities.User
 import com.example.olmedo.dislexis.Database.entities.UserLogged
+import com.example.olmedo.dislexis.Network.Examen
 import com.example.olmedo.dislexis.Network.UserRetro
 import com.example.olmedo.dislexis.Network.UserService
 
@@ -28,7 +29,11 @@ class Repository (private val userDao: UserDAO, private val userService: UserSer
         return userService.loginUser(userAuthorization)
     }
 
-    fun getUser(userLogged: UserLogged):Deferred<Response<UserRetro>> {
-        return userService.getUser(userLogged)
+    fun getUser(username: String):Deferred<Response<UserRetro>> {
+        return userService.getUser(username)
+    }
+
+    fun getPreguntas():Deferred<Response<Examen>> {
+        return userService.getPreguntas()
     }
 }

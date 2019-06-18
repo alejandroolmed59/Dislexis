@@ -36,9 +36,7 @@ data class UserRetro(
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
-        parcel.readString(),
-        TODO("examenes"),
-        TODO("pacientes")
+        parcel.readString()
     ) {
     }
 

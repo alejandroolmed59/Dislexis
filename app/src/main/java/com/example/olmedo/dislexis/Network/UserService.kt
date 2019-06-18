@@ -9,10 +9,7 @@ import kotlinx.coroutines.Deferred
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.HTTP
-import retrofit2.http.POST
+import retrofit2.http.*
 
 const val GITHUB_BASE_URL = "https://dislexisapi.herokuapp.com/"
 interface UserService{
@@ -23,8 +20,11 @@ interface UserService{
     @POST("/login/")
     fun loginUser(@Body userAuthorization: userAuthorization):Deferred<Response<User>>
 
-    @HTTP(method = "GET", path = "/getOneUser/", hasBody = true)
-    fun getUser(@Body userLogged: UserLogged):Deferred<Response<UserRetro>>
+    @GET("getOneUser/{username}/")
+    fun getUser(@Path("username") username: String ):Deferred<Response<UserRetro>>
+
+    @GET("/pregunta/")
+    fun getPreguntas():Deferred<Response<Examen>>
 
     companion object {
 

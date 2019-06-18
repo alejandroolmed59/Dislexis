@@ -1,8 +1,20 @@
 package com.example.olmedo.dislexis.Database.entities.DTO
 
-class userAuthorization(
+import com.squareup.moshi.Json
+
+data class userAuthorization(
+   @field: Json(name="username")
    val username: String,
-   val password: String,
+
+   @field: Json(name="email")
    val email: String?,
-   val medicoReferencia: String?
+
+   @field: Json(name="password")
+   val password: String,
+
+   @field: Json(name="isPaciente")
+   val isPaciente: String?,
+
+   @field: Json(name="medico")
+   val medico: String?
 )
