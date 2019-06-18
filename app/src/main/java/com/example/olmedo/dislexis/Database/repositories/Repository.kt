@@ -4,6 +4,8 @@ import androidx.annotation.WorkerThread
 import com.example.olmedo.dislexis.Database.daos.UserDAO
 import com.example.olmedo.dislexis.Database.entities.DTO.userAuthorization
 import com.example.olmedo.dislexis.Database.entities.User
+import com.example.olmedo.dislexis.Database.entities.UserLogged
+import com.example.olmedo.dislexis.Network.UserRetro
 import com.example.olmedo.dislexis.Network.UserService
 
 import kotlinx.coroutines.Deferred
@@ -24,5 +26,9 @@ class Repository (private val userDao: UserDAO, private val userService: UserSer
 
     fun loginUser(userAuthorization: userAuthorization):Deferred<Response<User>> {
         return userService.loginUser(userAuthorization)
+    }
+
+    fun getUser(userLogged: UserLogged):Deferred<Response<UserRetro>> {
+        return userService.getUser(userLogged)
     }
 }

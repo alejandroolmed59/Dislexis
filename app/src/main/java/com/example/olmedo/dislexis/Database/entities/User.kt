@@ -21,3 +21,10 @@ data class User(
     @field: Json(name="medicoReferencia")
     val medicoReferencia:String?
 )
+
+
+data class UserLogged(
+    @field: Json(name="username")
+    val username: String
+
+)
