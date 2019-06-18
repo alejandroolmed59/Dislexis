@@ -1,159 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                >
-
-    <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/f"
-            android:scaleType="centerCrop"
-    />
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:background="#fcfcfc"
+        android:gravity="center"
+        android:id="@+id/ll">
 
     <LinearLayout
-            android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:background="#d8000000"
+            android:clipToPadding="false"
             android:gravity="center"
-            android:layout_height="match_parent">
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <androidx.cardview.widget.CardView
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:layout_width="340dp"
+                android:layout_height="150dp"
+                android:layout_margin="10dp">
+            <LinearLayout
 
-        <ImageView
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:src="@drawable/register"
-                android:layout_marginBottom="50dp"
-        />
-        <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/et_name"
-                android:hint="Username"
-                android:inputType="text"
-                android:layout_marginBottom="15dp"
-                android:textColor="#fff"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/input"
-                android:paddingLeft="20dp"
-                android:paddingRight="10dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:textColorHint="#ccc"/>
-        <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/et_email"
-                android:hint="Email"
-                android:inputType="number"
-                android:layout_marginBottom="15dp"
-                android:textColor="#fff"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/input"
-                android:paddingLeft="20dp"
-                android:paddingRight="10dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:textColorHint="#ccc"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="184dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/cerclebackgroundpurple"
+                        android:src="@drawable/ic_account_circle_black_24dp"
+                        android:padding="10dp"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"
+                        android:text="Menu"/>
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/lightgray"
+                        android:layout_margin="10dp"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="63dp"
+                        android:gravity="center"
+                        android:text="Puedes seleccionar cualquiera de las siguientes opciones!!"
+                        android:padding="5dp"
+                        android:textColor="@android:color/darker_gray"/>
 
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-        <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/et_password"
-                android:hint="Password"
-                android:inputType="textEmailAddress"
-                android:layout_marginBottom="15dp"
-                android:textColor="#fff"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/input"
-                android:paddingLeft="20dp"
-                android:paddingRight="10dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:textColorHint="#ccc"/>
-        <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/et_medico_ref"
-                android:hint="Medico referencia "
-                android:layout_marginBottom="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/input"
-                android:paddingLeft="20dp"
-                android:paddingRight="10dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:textColorHint="#ccc"
-                android:textColor="#fff"
-                android:inputType="textPassword"/>
-        <LinearLayout android:layout_width="wrap_content"
-                      android:layout_height="53dp"
-
-                      android:orientation="horizontal"
-                      >
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="¿Es usted paciente?"
-                    android:textSize="16sp"
-                    android:textColor="#fff"
-            />
-
-
-
-            <RadioButton
-                    android:layout_marginLeft="20dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/input" tools:ignore="Suspicious0dp"/>
-
-        </LinearLayout>
-
-
-        <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:id="@+id/bt_register"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/btn_fondo_color"
-                android:text="Register"
-                android:textColor="#fff"
-                android:textSize="16sp"
-                android:elevation="5dp"/>
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:gravity="center"
-                android:layout_height="wrap_content">
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="¿Ya tienes cuenta?"
-                    android:textSize="16sp"
-                    android:textColor="#fff"
-            />
-            <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Iniciar Sesión"
-                    android:id="@+id/btn_ir_inicioSesion"
-                    android:background="@android:color/transparent"
-                    android:layout_marginLeft="10dp"
-                    android:textColor="#fff"/>
-
-        </LinearLayout>
 
     </LinearLayout>
 
-</RelativeLayout>
+    <LinearLayout
+            android:clipToPadding="false"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <androidx.cardview.widget.CardView
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:layout_width="160dp"
+                android:layout_height="190dp"
+
+                android:layout_margin="10dp">
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/cerclebackgroundgreen"
+                        android:src="@drawable/ic_fast_forward_black_24dp"
+                        android:padding="10dp"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp"
+                        android:text="Diagnostic mode"/>
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/lightgray"
+                        android:layout_margin="10dp"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Realiza un diagnostico para determinar el nivel de DIslexia"
+                        android:padding="5dp"
+                        android:textColor="@android:color/darker_gray"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:layout_width="160dp"
+                android:layout_height="190dp"
+                android:layout_margin="10dp">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/cerclebackgroundyello"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_fast_forward_black_24dp" />
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Test mode"
+                        android:textStyle="bold" />
+
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="10dp"
+                        android:background="@color/lightgray" />
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Preguntas para mejorar el nivel de dislexia"
+                        android:textColor="@android:color/darker_gray" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</LinearLayout>
