@@ -69,7 +69,31 @@ data class Examen (
 
     @field: Json(name="respuesta")
     val respuesta:String?
-)
+):Parcelable {
+    constructor(parcel: Parcel) : this(
+            parcel.readString(),
+            parcel.readString()) {
+    }
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(pregunta)
+        parcel.writeString(respuesta)
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<Examen> {
+        override fun createFromParcel(parcel: Parcel): Examen {
+            return Examen(parcel)
+        }
+
+        override fun newArray(size: Int): Array<Examen?> {
+            return arrayOfNulls(size)
+        }
+    }
+}
 
 data class Paciente (
     @field: Json(name="_id")

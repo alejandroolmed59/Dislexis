@@ -72,45 +72,52 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-        <androidx.cardview.widget.CardView
-                android:foreground="?android:attr/selectableItemBackground"
-                android:clickable="true"
-                android:layout_width="160dp"
-                android:layout_height="250dp"
-                app:cardUseCompatPadding="true"
-                app:cardElevation="10dp"
-                app:cardCornerRadius="4dp"
 
-                android:layout_margin="10dp">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_diagnostic"
+            android:layout_width="160dp"
+            android:layout_height="250dp"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="4dp"
+
+            app:cardElevation="10dp"
+            app:cardUseCompatPadding="true">
+
             <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
                 <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:background="@drawable/cerclebackgroundgreen"
-                        android:src="@drawable/ic_thumb_up_black_24dp"
-                        android:padding="10dp"/>
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/cerclebackgroundgreen"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_thumb_up_black_24dp" />
+
                 <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:layout_marginTop="10dp"
-                        android:text="Diagnostic mode"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Diagnostic mode"
+                    android:textStyle="bold" />
+
                 <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/lightgray"
-                        android:layout_margin="10dp"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/lightgray" />
+
                 <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Realiza un diagnostico para determinar el nivel de DIslexia"
-                        android:padding="5dp"
-                        android:textColor="@android:color/darker_gray"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Realiza un diagnostico para determinar el nivel de DIslexia"
+                    android:textColor="@android:color/darker_gray" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
