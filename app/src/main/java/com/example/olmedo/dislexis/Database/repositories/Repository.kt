@@ -33,7 +33,7 @@ class Repository (private val userDao: UserDAO, private val userService: UserSer
         return userService.getUser(username)
     }
 
-    fun getPreguntas():Deferred<Response<Examen>> {
+    fun getPreguntas():Deferred<Response<List<Examen>>> {
         return userService.getPreguntas()
     }
 }

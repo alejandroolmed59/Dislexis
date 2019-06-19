@@ -9,7 +9,6 @@ import com.example.olmedo.dislexis.Network.UserRetro
 import com.example.olmedo.dislexis.R
 import com.example.olmedo.dislexis.ViewModels.UserViewModel
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_register.*
 
 class MainActivity : AppCompatActivity() {
     lateinit var userViewModel: UserViewModel

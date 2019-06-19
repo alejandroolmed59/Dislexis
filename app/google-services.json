@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "571462471692",
+    "firebase_url": "https://dislexis-69420.firebaseio.com",
+    "project_id": "dislexis-69420",
+    "storage_bucket": "dislexis-69420.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:571462471692:android:a155ad6015971b1b",
+        "android_client_info": {
+          "package_name": "com.example.olmedo.dislexis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "571462471692-8ou22n3be0qce5jacpvjqq3qjd5nc0fm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.olmedo.dislexis",
+            "certificate_hash": "974100846b0246f6b7332a1f167da5fd01dda2d8"
+          }
+        },
+        {
+          "client_id": "571462471692-a7vcjbv7vvs313klq3ueovcqkqmgnflu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDQzkVQPPneIpj06sDIMZMjh_g2KN05ZQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "571462471692-a7vcjbv7vvs313klq3ueovcqkqmgnflu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

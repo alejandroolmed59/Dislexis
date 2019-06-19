@@ -9,7 +9,8 @@
         android:padding="10dp"
         android:background="#fcfcfc"
         android:gravity="center"
-        android:id="@+id/ll">
+        android:id="@+id/ll"
+        tools:context=".Activities.menuActivity">
 
     <LinearLayout
             android:clipToPadding="false"

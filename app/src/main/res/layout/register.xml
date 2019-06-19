@@ -4,6 +4,7 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                tools:context=".Activities.registerActivity"
 >
 
     <ImageView
@@ -20,16 +21,11 @@
             android:gravity="center"
             android:layout_height="match_parent">
 
-        <ImageView
-                android:layout_width="200dp"
-                android:layout_height="100dp"
-                android:src="@drawable/register"
-                android:layout_marginBottom="50dp"
-        />
+
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/et_name"
+                android:id="@+id/username"
                 android:hint="Username"
                 android:inputType="text"
                 android:layout_marginBottom="15dp"
@@ -45,26 +41,8 @@
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/et_email"
+                android:id="@+id/email"
                 android:hint="Email"
-                android:inputType="number"
-                android:layout_marginBottom="15dp"
-                android:textColor="#fff"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/input"
-                android:paddingLeft="20dp"
-                android:paddingRight="10dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:textColorHint="#ccc"/>
-
-
-        <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/et_password"
-                android:hint="Password"
                 android:inputType="textEmailAddress"
                 android:layout_marginBottom="15dp"
                 android:textColor="#fff"
@@ -76,10 +54,28 @@
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 android:textColorHint="#ccc"/>
+
+
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/et_medico_ref"
+                android:id="@+id/password"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:layout_marginBottom="15dp"
+                android:textColor="#fff"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/input"
+                android:paddingLeft="20dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textColorHint="#ccc"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/medicoReferencia"
                 android:hint="Medico referencia "
                 android:layout_marginBottom="20dp"
                 android:layout_marginLeft="20dp"
@@ -91,7 +87,8 @@
                 android:paddingBottom="10dp"
                 android:textColorHint="#ccc"
                 android:textColor="#fff"
-                android:inputType="textPassword"/>
+                android:enabled="false"
+            />
         <LinearLayout android:layout_width="wrap_content"
                       android:layout_height="53dp"
 
@@ -106,12 +103,11 @@
             />
 
 
-
             <RadioButton
                     android:layout_marginLeft="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/input" tools:ignore="Suspicious0dp"/>
+                    android:background="@drawable/input" tools:ignore="Suspicious0dp" android:id="@+id/rb_isPaciente"/>
 
         </LinearLayout>
 

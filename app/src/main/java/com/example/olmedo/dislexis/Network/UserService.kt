@@ -24,7 +24,7 @@ interface UserService{
     fun getUser(@Path("username") username: String ):Deferred<Response<UserRetro>>
 
     @GET("/pregunta/")
-    fun getPreguntas():Deferred<Response<Examen>>
+    fun getPreguntas():Deferred<Response<List<Examen>>>
 
     companion object {
 
