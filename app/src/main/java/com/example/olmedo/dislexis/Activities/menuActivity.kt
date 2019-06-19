@@ -27,8 +27,6 @@ class  menuActivity : AppCompatActivity() {
         setContentView(R.layout.content_menu)
 
 
-
-
         card_diagnostic.setOnClickListener(){
             startActivity(Intent(this, DiagnosticActivity::class.java))
         }

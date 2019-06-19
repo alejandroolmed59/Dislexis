@@ -10,17 +10,18 @@
         android:id="@+id/tv_pregunta"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:text="pregunta"
+         />
 
     <TextView
         android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Respuesta"
         android:id="@+id/tv_respuesta" />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/SiguientePregunta"
         android:text="Siguiente"/>
