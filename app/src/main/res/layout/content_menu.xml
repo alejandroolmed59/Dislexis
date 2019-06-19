@@ -9,6 +9,7 @@
         android:padding="10dp"
         android:background="#fcfcfc"
         android:gravity="center"
+
         android:id="@+id/ll"
         tools:context=".Activities.menuActivity">
 
@@ -22,24 +23,28 @@
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
                 android:layout_width="340dp"
-                android:layout_height="150dp"
+                app:cardUseCompatPadding="true"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="4dp"
+                android:layout_height="200dp"
                 android:layout_margin="10dp">
             <LinearLayout
-
                     android:layout_width="match_parent"
-                    android:layout_height="184dp"
+                    android:layout_height="194dp"
                     android:orientation="vertical"
+                    android:background="#6B000000"
                     android:gravity="center">
                 <ImageView
                         android:layout_width="64dp"
                         android:layout_height="64dp"
                         android:background="@drawable/cerclebackgroundpurple"
-                        android:src="@drawable/ic_account_circle_black_24dp"
+                        android:src="@drawable/ic_sentiment_very_satisfied_black_24dp"
                         android:padding="10dp"/>
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
+                        android:textSize="20dp"
                         android:layout_marginTop="10dp"
                         android:text="Menu"/>
                 <View
@@ -51,9 +56,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="63dp"
                         android:gravity="center"
-                        android:text="Puedes seleccionar cualquiera de las siguientes opciones!!"
+                        android:text="Puedes seleccionar cualquiera de las siguientes dos opciones!!"
                         android:padding="5dp"
-                        android:textColor="@android:color/darker_gray"/>
+                        android:textColor="#000000"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -71,7 +76,10 @@
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
                 android:layout_width="160dp"
-                android:layout_height="190dp"
+                android:layout_height="250dp"
+                app:cardUseCompatPadding="true"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="4dp"
 
                 android:layout_margin="10dp">
             <LinearLayout
@@ -83,7 +91,7 @@
                         android:layout_width="64dp"
                         android:layout_height="64dp"
                         android:background="@drawable/cerclebackgroundgreen"
-                        android:src="@drawable/ic_fast_forward_black_24dp"
+                        android:src="@drawable/ic_thumb_up_black_24dp"
                         android:padding="10dp"/>
                 <TextView
                         android:layout_width="wrap_content"
@@ -110,7 +118,10 @@
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
                 android:layout_width="160dp"
-                android:layout_height="190dp"
+                android:layout_height="250dp"
+                app:cardUseCompatPadding="true"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="4dp"
                 android:layout_margin="10dp">
 
             <LinearLayout
@@ -124,20 +135,20 @@
                         android:layout_height="64dp"
                         android:background="@drawable/cerclebackgroundyello"
                         android:padding="10dp"
-                        android:src="@drawable/ic_fast_forward_black_24dp" />
+                        android:src="@drawable/ic_sad"/>
 
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:text="Test mode"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"/>
 
                 <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_margin="10dp"
-                        android:background="@color/lightgray" />
+                        android:background="@color/lightgray"/>
 
                 <TextView
                         android:layout_width="wrap_content"
@@ -145,7 +156,7 @@
                         android:gravity="center"
                         android:padding="5dp"
                         android:text="Preguntas para mejorar el nivel de dislexia"
-                        android:textColor="@android:color/darker_gray" />
+                        android:textColor="@android:color/darker_gray"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>

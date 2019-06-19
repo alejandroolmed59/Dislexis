@@ -32,6 +32,9 @@ class registerActivity : AppCompatActivity() {
                 medicoReferencia.setCursorVisible(true);
 
         }
+        go_to_login.setOnClickListener(){
+            startActivity(Intent(this, MainActivity::class.java))
+        }
 
         bt_register.setOnClickListener(){
             var flag = if(rb_isPaciente.isChecked) {"true"}else{"false"}
