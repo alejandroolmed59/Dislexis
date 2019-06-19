@@ -9,6 +9,7 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.bumptech.glide.Glide
 import com.example.olmedo.dislexis.Database.entities.DTO.userAuthorization
 import com.example.olmedo.dislexis.R
 import com.example.olmedo.dislexis.ViewModels.UserViewModel
@@ -19,6 +20,11 @@ class registerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.register)
+
+        Glide.with(this)
+            .load(R.drawable.register)
+            .into(registerImage)
+
         userViewModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
         rb_isPaciente.setOnClickListener(){
                 medicoReferencia.setFocusable(true);

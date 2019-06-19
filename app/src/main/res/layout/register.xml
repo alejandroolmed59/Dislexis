@@ -13,13 +13,18 @@
             android:src="@drawable/f"
             android:scaleType="centerCrop"
     />
-
     <LinearLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
             android:background="#d8000000"
             android:gravity="center"
             android:layout_height="match_parent">
+        <ImageView
+                android:id="@+id/registerImage"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="50dp"
+        />
 
 
         <EditText
@@ -88,7 +93,7 @@
                 android:textColorHint="#ccc"
                 android:textColor="#fff"
                 android:enabled="false"
-            />
+        />
         <LinearLayout android:layout_width="wrap_content"
                       android:layout_height="53dp"
 

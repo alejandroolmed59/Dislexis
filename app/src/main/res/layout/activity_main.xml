@@ -49,7 +49,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="300dp"
         android:layout_height="50dp"
-        app:cardBackgroundColor="@color/colorAccent"
+        app:cardBackgroundColor="@color/colorPrimaryDark"
         app:cardCornerRadius="25dp"
         app:cardElevation="10dp"
         android:id="@+id/cardViewLogin"
@@ -75,7 +75,7 @@
     <androidx.cardview.widget.CardView
             android:layout_width="300dp"
             android:layout_height="50dp"
-            app:cardBackgroundColor="@color/colorAccent"
+            app:cardBackgroundColor="@color/colorPrimaryDark"
             app:cardCornerRadius="25dp"
             app:cardElevation="10dp"
             android:id="@+id/cardViewRegister"
