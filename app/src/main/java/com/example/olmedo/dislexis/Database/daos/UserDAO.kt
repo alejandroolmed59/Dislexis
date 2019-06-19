@@ -11,8 +11,4 @@ interface UserDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(user: User)
 
-   // @Query("SELECT*FROM repos")
-   // fun getAllRepos():LiveData<List<GitHubRepo>>
-
-
 }

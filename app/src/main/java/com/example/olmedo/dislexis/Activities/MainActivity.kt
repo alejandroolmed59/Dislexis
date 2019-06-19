@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProviders
-import com.example.olmedo.dislexis.AppConstants
 import com.example.olmedo.dislexis.Database.entities.DTO.userAuthorization
 import com.example.olmedo.dislexis.Network.UserRetro
 import com.example.olmedo.dislexis.R
@@ -30,7 +29,13 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, registerActivity::class.java)) }
     }
     fun nuevaActivity(user: UserRetro){
-            AppConstants.user = user
-            startActivity(Intent(this, menuActivity::class.java))
+        if(user!=null) {
+            var bundle = Bundle()
+            bundle.putParcelable("USER", user)
+            startActivity(Intent(this, menuActivity::class.java).putExtra("BUNDLE", bundle))
+        }
     }
+
+
+
 }
