@@ -108,11 +108,13 @@
             />
 
 
-            <RadioButton
+            <CheckBox
                     android:layout_marginLeft="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/input" tools:ignore="Suspicious0dp" android:id="@+id/rb_isPaciente"/>
+                    android:background="@drawable/input"
+                    android:checked="true"
+                    android:id="@+id/rb_isPaciente"/>
 
         </LinearLayout>
 

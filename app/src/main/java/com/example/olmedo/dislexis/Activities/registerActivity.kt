@@ -36,6 +36,7 @@ class registerActivity : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
         }
 
+
         bt_register.setOnClickListener(){
             var flag = if(rb_isPaciente.isChecked) {"true"}else{"false"}
             userViewModel.registerUser(userAuthorization(username.text.toString(), email.text.toString(), password.text.toString(), flag, medicoReferencia.text.toString()), {callback: Boolean-> respuesta(callback)})

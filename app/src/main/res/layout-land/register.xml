@@ -27,6 +27,7 @@
                 android:id="@+id/registerImage"
                 android:layout_width="200dp"
                 android:layout_height="100dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginBottom="50dp"
         />
 
@@ -112,11 +113,13 @@
             />
 
 
-            <RadioButton
+            <CheckBox
                     android:layout_marginLeft="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/input" tools:ignore="Suspicious0dp" android:id="@+id/rb_isPaciente"/>
+                    android:background="@drawable/input"
+                    tools:ignore="Suspicious0dp"
+                    android:id="@+id/rb_isPaciente"/>
 
         </LinearLayout>
 
