@@ -18,6 +18,7 @@ import com.example.olmedo.dislexis.ViewModels.UserViewModel
 class DiagnosticActivity : AppCompatActivity(), PreguntaFragment.OnFragmentInteractionListener {
 
     var contadorPregunta: Int =0
+    var contadorRespuestaCorrecta: Int =0
     lateinit var userViewModel: UserViewModel
     val preguntasList : MutableList<Examen> = arrayListOf()
     val user = AppConstants.user
@@ -36,10 +37,13 @@ class DiagnosticActivity : AppCompatActivity(), PreguntaFragment.OnFragmentInter
             initMainFragment(contadorPregunta)
         })
     }
-    override fun clickSiguientePregunta() {
+    override fun clickSiguientePregunta(respuesta: String) {
+        if(respuesta == "correcta") contadorRespuestaCorrecta++
         contadorPregunta++
         if(preguntasList.size> contadorPregunta) initMainFragment(contadorPregunta)
-        else Toast.makeText(this@DiagnosticActivity, "Finalizo el diagnostico", Toast.LENGTH_LONG).show()
+        else Toast.makeText(this@DiagnosticActivity, "Finalizo el diagnostico"+ contadorRespuestaCorrecta, Toast.LENGTH_LONG).show()
+
+
     }
 
     fun initMainFragment(numPregunta: Int){

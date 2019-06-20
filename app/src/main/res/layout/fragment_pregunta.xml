@@ -13,17 +13,12 @@
         android:text="pregunta"
          />
 
-    <TextView
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Respuesta"
-        android:id="@+id/tv_respuesta" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/SiguientePregunta"
-        android:text="Siguiente"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+    <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="def" android:id="@+id/correcta"/>
+     <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="incorrecta" android:id="@+id/incorrecta"/>
+    </LinearLayout>
+
 
 </LinearLayout>
