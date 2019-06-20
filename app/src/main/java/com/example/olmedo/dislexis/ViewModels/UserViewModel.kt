@@ -86,7 +86,7 @@ class UserViewModel(private val app: Application) : AndroidViewModel(app) {
         val response = repository.getPreguntas().await()
         if(response.isSuccessful){
             when(response.code()){
-                200->preguntasList.postValue(response.body()?.toMutableList()?:arrayListOf(Examen("¿¿Wut", "ya")))
+                200->preguntasList.postValue(response.body()?.toMutableList()?:arrayListOf(Examen("¿¿Wut", "ya", "no")))
             }
         }else{
             //Toast.makeText(app, "Ocurrio un error", Toast.LENGTH_LONG).show()

@@ -38,17 +38,17 @@ class PreguntaFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_pregunta, container, false)
 
-            //Log.v("fragment", notoquenesto.notoquenesto + notoquenesto.respuesta)
-        //    view.tv_pregunta.text = pregunta.pregunta
-          //  view.correcta.text = pregunta.respuesta
-            //view.incorrecta.text= pregunta.respuestaIncorrecta
+            view.pregunta.text = pregunta.pregunta
+            view.tv_correcta.text = pregunta.respuestaCorrecta
+            view.tv_incorrecta.text= pregunta.respuestaIncorrecta
 
-            //view.correcta.setOnClickListener(){
-             //   listener?.clickSiguientePregunta("correcta")
-            //}
-            //view.incorrecta.setOnClickListener(){
-            //listener?.clickSiguientePregunta("incorrecta")
-            //}
+
+            view.ly_correcto.setOnClickListener(){
+                listener?.clickSiguientePregunta("correcta")
+            }
+            view.ly_incorrecto.setOnClickListener(){
+            listener?.clickSiguientePregunta("incorrecta")
+            }
         return view
     }
 

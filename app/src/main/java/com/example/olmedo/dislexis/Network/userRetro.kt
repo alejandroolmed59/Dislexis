@@ -67,17 +67,25 @@ data class Examen (
     @field: Json(name="pregunta")
     val pregunta: String?,
 
-    @field: Json(name="respuesta")
-    val respuesta:String?
+    @field: Json(name="respuestaCorrecta")
+    val respuestaCorrecta:String?,
+
+    @field: Json(name="respuestaIncorrecta")
+    val respuestaIncorrecta:String?
+
+
 ):Parcelable {
     constructor(parcel: Parcel) : this(
-            parcel.readString(),
-            parcel.readString()) {
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString()
+    ) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(pregunta)
-        parcel.writeString(respuesta)
+        parcel.writeString(respuestaCorrecta)
+        parcel.writeString(respuestaIncorrecta)
     }
 
     override fun describeContents(): Int {

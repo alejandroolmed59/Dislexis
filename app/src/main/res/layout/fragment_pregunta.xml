@@ -31,14 +31,7 @@
                 android:textColor="@color/white"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="5dp"/>
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Respuesta"
-                android:id="@+id/respuesta"
-                android:textColor="@color/white"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="5dp"/>
+
     </LinearLayout>
     <LinearLayout
             android:layout_marginTop="15dp"
@@ -51,7 +44,7 @@
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:clickable="true"
-
+                android:id="@+id/ly_correcto"
                 android:layout_width="0dp"
                 android:layout_height="100dp">
 
@@ -66,28 +59,7 @@
                     android:textColor="@color/white"/>
         </LinearLayout>
         <LinearLayout
-                android:background="@color/green"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="100dp">
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tv_score"
-                    android:text="100"
-                    android:textSize="18sp"
-                    android:textColor="@color/white"/>
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="SCORE"
-                    android:textSize="18sp"
-                    android:textColor="@color/white"/>
-        </LinearLayout>
-        <LinearLayout
+                android:id="@+id/ly_incorrecto"
                 android:background="@color/bluelight"
                 android:gravity="center"
                 android:orientation="vertical"
@@ -107,14 +79,6 @@
         </LinearLayout>
     </LinearLayout>
 
-    <Button
 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/SiguientePregunta"
-            android:text="Next Question"
-            android:layout_marginTop="25dp"
-            android:layout_gravity="center_horizontal"
-            android:textColor="#000000"/>
 
 </LinearLayout>
