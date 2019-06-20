@@ -94,12 +94,20 @@ class UserViewModel(private val app: Application) : AndroidViewModel(app) {
 
     fun getPreguntas() = viewModelScope.launch(Dispatchers.IO) {
         val response = repository.getPreguntas().await()
-        if (response.isSuccessful) {
-            when (response.code()) {
-                200 -> preguntasList.postValue(response.body()?.toMutableList() ?: arrayListOf(Examen("¿¿Wut", "ya")))
+        if(response.isSuccessful){
+            when(response.code()){
+                200->preguntasList.postValue(response.body()?.toMutableList()?:arrayListOf(Examen("¿¿Wut", "ya", "no")))
             }
-        } else {
+        }else{
             //Toast.makeText(app, "Ocurrio un error", Toast.LENGTH_LONG).show()
+        }
+    }
+    fun subirExamen(username: String, contador: Int) = viewModelScope.launch(Dispatchers.IO) {
+        val response = repository.subirExamen(username, contador).await()
+        if(response.isSuccessful){
+            when(response.code()){
+                200-> Log.v("subida", "Respuesta subida")
+            }
         }
     }
 
