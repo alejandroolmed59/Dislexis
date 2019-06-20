@@ -92,6 +92,14 @@ class UserViewModel(private val app: Application) : AndroidViewModel(app) {
             //Toast.makeText(app, "Ocurrio un error", Toast.LENGTH_LONG).show()
         }
     }
+    fun subirExamen(username: String, contador: Int) = viewModelScope.launch(Dispatchers.IO) {
+        val response = repository.subirExamen(username, contador).await()
+        if(response.isSuccessful){
+            when(response.code()){
+                200-> Log.v("subida", "Respuesta subida")
+            }
+        }
+    }
 
 }
 

@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.example.olmedo.dislexis.AppConstants
 import com.example.olmedo.dislexis.Network.Examen
 import com.example.olmedo.dislexis.Network.UserRetro
 import com.example.olmedo.dislexis.PreguntaFragment
@@ -25,8 +26,6 @@ class  menuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.content_menu)
-
-
         card_diagnostic.setOnClickListener(){
             startActivity(Intent(this, DiagnosticActivity::class.java))
         }
