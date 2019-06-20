@@ -43,7 +43,11 @@ class registerActivity : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
         }
 
-
+        if(rb_isPaciente.isChecked){
+            medicoReferencia.isEnabled = true
+        }else if(!(rb_isPaciente.isChecked)) {
+            medicoReferencia.isEnabled = false
+        }
         bt_register.setOnClickListener() {
             var flag = if (rb_isPaciente.isChecked) {
                 "true"
