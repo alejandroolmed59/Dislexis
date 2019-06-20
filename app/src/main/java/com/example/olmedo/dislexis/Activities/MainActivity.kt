@@ -7,6 +7,7 @@ import android.net.ConnectivityManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.olmedo.dislexis.Database.entities.DTO.userAuthorization
 import com.example.olmedo.dislexis.Network.UserRetro
@@ -44,6 +45,16 @@ class MainActivity : AppCompatActivity() {
                     editText.text.toString(),
                     editText2.text.toString(),
                     {user: UserRetro-> nuevaActivity(user)})
+
+                userViewModel.code.observe(this, Observer{code ->
+                    if(code == 500){
+                        loadingBar.dismiss()
+                        Snackbar.make(it,"Datos erroneos",Snackbar.LENGTH_LONG).show()
+                        //userViewModel.code.postValue(0)
+                    }
+                    userViewModel.code.postValue(0)
+                })
+
             }else{
                 Snackbar.make(it, "No hay conexion a internet", Snackbar.LENGTH_LONG)
                     .setAction(
@@ -70,6 +81,8 @@ class MainActivity : AppCompatActivity() {
         val activeNetworkInfo = connectivityManager.activeNetworkInfo
         return activeNetworkInfo != null && activeNetworkInfo.isConnected
     }
+
+
 
 
 
