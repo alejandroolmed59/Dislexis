@@ -38,7 +38,7 @@ class PreguntaFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_pregunta, container, false)
 
-            //Log.v("fragment", pregunta.pregunta + pregunta.respuesta)
+            //Log.v("fragment", notoquenesto.notoquenesto + notoquenesto.respuesta)
             view.tv_pregunta.text = pregunta.pregunta
             view.correcta.text = pregunta.respuesta
             //view.incorrecta.text= pregunta.respuestaIncorrecta

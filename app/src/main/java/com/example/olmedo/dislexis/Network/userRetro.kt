@@ -64,7 +64,7 @@ data class UserRetro(
 }
 
 data class Examen (
-    @field: Json(name="pregunta")
+    @field: Json(name="notoquenesto")
     val pregunta: String?,
 
     @field: Json(name="respuesta")

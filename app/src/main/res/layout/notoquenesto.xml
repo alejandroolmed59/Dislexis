@@ -24,8 +24,8 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+
                 android:text="Pregunta"
-                android:id="@+id/pregunta"
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 android:layout_gravity="center_horizontal"
@@ -34,7 +34,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Respuesta"
-                android:id="@+id/respuesta"
                 android:textColor="@color/white"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="5dp"/>
@@ -50,7 +49,7 @@
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:clickable="true"
-
+                android:id="@+id/correcta"
                 android:layout_width="0dp"
                 android:layout_height="100dp">
 
@@ -74,7 +73,7 @@
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
+                    android:id="@+id/tv_score"
                     android:text="100"
                     android:textSize="18sp"
                     android:textColor="@color/white"/>
@@ -92,7 +91,7 @@
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:clickable="true"
-
+                android:id="@+id/incorrecta"
                 android:layout_height="100dp">
 
 
@@ -106,10 +105,9 @@
     </LinearLayout>
 
     <Button
-
+            android:id="@+id/SiguientePregunta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/SiguientePregunta"
             android:text="Next Question"
             android:layout_marginTop="25dp"
             android:layout_gravity="center_horizontal"
