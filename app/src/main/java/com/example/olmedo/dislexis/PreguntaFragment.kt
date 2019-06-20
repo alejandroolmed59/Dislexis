@@ -23,7 +23,7 @@ class PreguntaFragment : Fragment() {
     private var listener: OnFragmentInteractionListener? = null
 
     interface OnFragmentInteractionListener {
-        fun clickSiguientePregunta()
+        fun clickSiguientePregunta(respuesta : String)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,12 +38,16 @@ class PreguntaFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_pregunta, container, false)
 
-            //Log.v("fragment", pregunta.pregunta + pregunta.respuesta)
+            //Log.v("fragment", notoquenesto.notoquenesto + notoquenesto.respuesta)
             view.tv_pregunta.text = pregunta.pregunta
-            view.tv_respuesta.text = pregunta.respuesta
+            view.correcta.text = pregunta.respuesta
+            //view.incorrecta.text= pregunta.respuestaIncorrecta
 
-            view.SiguientePregunta.setOnClickListener(){
-                listener?.clickSiguientePregunta()
+            view.correcta.setOnClickListener(){
+                listener?.clickSiguientePregunta("correcta")
+            }
+            view.incorrecta.setOnClickListener(){
+            listener?.clickSiguientePregunta("incorrecta")
             }
         return view
     }
