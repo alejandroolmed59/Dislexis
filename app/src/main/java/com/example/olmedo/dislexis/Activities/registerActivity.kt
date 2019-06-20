@@ -1,5 +1,6 @@
 package com.example.olmedo.dislexis.Activities
 
+import android.app.ProgressDialog
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
@@ -21,6 +22,8 @@ import kotlinx.android.synthetic.main.register.*
 
 class registerActivity : AppCompatActivity() {
     lateinit var userViewModel: UserViewModel
+    lateinit var loadingBar: ProgressDialog
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.register)
@@ -30,32 +33,43 @@ class registerActivity : AppCompatActivity() {
             .into(registerImage)
 
         userViewModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
-        rb_isPaciente.setOnClickListener(){
-                medicoReferencia.setFocusable(true);
-                medicoReferencia.setEnabled(true);
-                medicoReferencia.setCursorVisible(true);
+        rb_isPaciente.setOnClickListener() {
+            medicoReferencia.setFocusable(true);
+            medicoReferencia.setEnabled(true);
+            medicoReferencia.setCursorVisible(true);
 
         }
-        go_to_login.setOnClickListener(){
+        go_to_login.setOnClickListener() {
             startActivity(Intent(this, MainActivity::class.java))
         }
 
 
-        bt_register.setOnClickListener(){
-            var flag = if(rb_isPaciente.isChecked) {"true"}else{"false"}
+        bt_register.setOnClickListener() {
+            var flag = if (rb_isPaciente.isChecked) {
+                "true"
+            } else {
+                "false"
+            }
             if (isNetworkAvailable()) {
+                loadingBar = ProgressDialog(this)
+                loadingBar.setTitle("Please wait...")
+                loadingBar.setMessage("We are registering your data")
+                loadingBar.setCanceledOnTouchOutside(false)
+                loadingBar.show()
                 userViewModel.registerUser(
-                    userAuthorization(username.text.toString(),
+                    userAuthorization(
+                        username.text.toString(),
                         email.text.toString(),
                         password.text.toString(),
                         flag,
-                        medicoReferencia.text.toString()),
-                    {callback: Boolean-> respuesta(callback)})
+                        medicoReferencia.text.toString()
+                    ),
+                    { callback: Boolean -> respuesta(callback) })
 
-            }else{
+            } else {
                 Snackbar.make(it, "No hay conexion a internet", Snackbar.LENGTH_LONG)
                     .setAction(
-                        "OK",{it.setOnClickListener { Log.v("ok", "ok") }}
+                        "OK", { it.setOnClickListener { Log.v("ok", "ok") } }
                     ).show()
             }
         }
@@ -63,12 +77,14 @@ class registerActivity : AppCompatActivity() {
     }
 
     private fun respuesta(callback: Boolean) {
-        if(callback){
+        loadingBar.dismiss()
+        if (callback) {
             startActivity(Intent(this, MainActivity::class.java))
-        }else{
-           // Toast.makeText(this, "Error medico inexistente o username ya en uso", Toast.LENGTH_LONG).show()
+        } else {
+            // Toast.makeText(this, "Error medico inexistente o username ya en uso", Toast.LENGTH_LONG).show()
         }
     }
+
     private fun isNetworkAvailable(): Boolean {
         val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val activeNetworkInfo = connectivityManager.activeNetworkInfo

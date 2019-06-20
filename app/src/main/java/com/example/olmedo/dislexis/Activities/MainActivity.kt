@@ -1,5 +1,6 @@
 package com.example.olmedo.dislexis.Activities
 
+import android.app.ProgressDialog
 import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
@@ -17,17 +18,28 @@ import kotlinx.android.synthetic.main.register.*
 
 class MainActivity : AppCompatActivity() {
     lateinit var userViewModel: UserViewModel
+    lateinit var loadingBar : ProgressDialog
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        setTheme(R.style.AppTheme) //added for spalsh screen
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         userViewModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
 
 
 
+
         textViewLogin.setOnClickListener(){
             if (isNetworkAvailable()) {
+                //Adding progress bar dialog for better UI experience
+                loadingBar = ProgressDialog(this)
+                loadingBar.setTitle("Please wait...")
+                loadingBar.setMessage("We are charging your data")
+                loadingBar.setCanceledOnTouchOutside(false)
+                loadingBar.show()
                 userViewModel.loginUser(
                     editText.text.toString(),
                     editText2.text.toString(),
@@ -47,8 +59,10 @@ class MainActivity : AppCompatActivity() {
         if(user!=null) {
             var bundle = Bundle()
             bundle.putParcelable("USER", user)
+            loadingBar.dismiss()
             startActivity(Intent(this, menuActivity::class.java).putExtra("BUNDLE", bundle))
         }
+
     }
 
     private fun isNetworkAvailable(): Boolean {
