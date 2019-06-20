@@ -36,4 +36,7 @@ class Repository (private val userDao: UserDAO, private val userService: UserSer
     fun getPreguntas():Deferred<Response<List<Examen>>> {
         return userService.getPreguntas()
     }
+    fun subirExamen(username: String, contador: Int) : Deferred<Response<Examen>>{
+        return userService.subirExamen(username, contador)
+    }
 }

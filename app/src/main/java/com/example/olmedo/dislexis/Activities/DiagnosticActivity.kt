@@ -41,7 +41,10 @@ class DiagnosticActivity : AppCompatActivity(), PreguntaFragment.OnFragmentInter
         if(respuesta == "correcta") contadorRespuestaCorrecta++
         contadorPregunta++
         if(preguntasList.size> contadorPregunta) initMainFragment(contadorPregunta)
-        else Toast.makeText(this@DiagnosticActivity, "Finalizo el diagnostico"+ contadorRespuestaCorrecta, Toast.LENGTH_LONG).show()
+        else { if(user!=null) {
+            userViewModel.subirExamen(user.username!!, contadorRespuestaCorrecta )
+            Toast.makeText(this, "Completada "+contadorRespuestaCorrecta, Toast.LENGTH_LONG).show()
+        } }
 
 
     }

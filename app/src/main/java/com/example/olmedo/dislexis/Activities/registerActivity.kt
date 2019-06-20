@@ -65,6 +65,14 @@ class registerActivity : AppCompatActivity() {
                         medicoReferencia.text.toString()
                     ),
                     { callback: Boolean -> respuesta(callback) })
+                userViewModel.code.observe(this, Observer { code ->
+                    if (code == 500) {
+                        loadingBar.dismiss()
+                        Snackbar.make(it, "Complete todos los campos", Snackbar.LENGTH_LONG).show()
+                        //userViewModel.code.postValue(0)
+                    }
+                    userViewModel.code.postValue(0)
+                })
 
             } else {
                 Snackbar.make(it, "No hay conexion a internet", Snackbar.LENGTH_LONG)

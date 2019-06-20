@@ -21,6 +21,7 @@ import kotlinx.coroutines.launch
 class UserViewModel(private val app: Application) : AndroidViewModel(app) {
 
     private val repository: Repository
+    var code = MutableLiveData<Int>()
 
     init {
         val userDao = RoomDB.getInstance(app).userDao()
@@ -33,52 +34,61 @@ class UserViewModel(private val app: Application) : AndroidViewModel(app) {
     private suspend fun insert(user: User) = repository.insert(user)
 
 
-    fun registerUser(userAuthorization: userAuthorization, callback: (Boolean)->Unit) = viewModelScope.launch(Dispatchers.IO) {
-        Log.v("LLEGO", "1")
-        val response = repository.registerUser(userAuthorization).await()
+    fun registerUser(userAuthorization: userAuthorization, callback: (Boolean) -> Unit) {
+        viewModelScope.launch(Dispatchers.IO) {
+            Log.v("LLEGO", "1")
+            val response = repository.registerUser(userAuthorization).await()
 
-        if (response.isSuccessful) with(response) {
-            if (this.code() == 200) {
-                Log.v("registerStatus", "succes")
+            if (response.isSuccessful) with(response) {
+                if (this.code() == 200) {
+                    code.postValue(200)
+                    Log.v("registerStatus", "succes")
 //                Log.v("registerStatus", this.body()?.username)
-                callback(true)
+                    callback(true)
+                } else {
+                    callback(false)
+                    Log.v("registerStatus", "fail1")
+                }
             } else {
                 callback(false)
-                Log.v("registerStatus", "fail")
+                code.postValue(500)
+                Log.v("registerStatus", "fail2")
+                // Toast.makeText(app, "Error con el registro", Toast.LENGTH_LONG).show()
             }
-        } else {
-            callback(false)
-            Log.v("registerStatus", "fail")
-            // Toast.makeText(app, "Error con el registro", Toast.LENGTH_LONG).show()
         }
     }
 
-    fun loginUser(user: String, password: String, callback: (UserRetro)->Unit) = viewModelScope.launch(Dispatchers.IO) {
-        val response = repository.loginUser(
-            userAuthorization(
-                user,
-                null,
-                password,
-                null,
-                null
-            )
-        ).await()
-        if (response.isSuccessful) with(response) {
-            if (this.code() == 200) {
-                Log.v("statusUser", "succ")
-                val responseUser = repository.getUser(user).await()
-                if(responseUser.isSuccessful) with(responseUser){
-                    if(this.code() == 200){
-                        callback(this.body()!!)
-                    }
-                }else{
+    fun loginUser(user: String, password: String, callback: (UserRetro) -> Unit) {
+        viewModelScope.launch(Dispatchers.IO) {
+            val response = repository.loginUser(
+                userAuthorization(
+                    user,
+                    null,
+                    password,
+                    null,
+                    null
+                )
+            ).await()
+            if (response.isSuccessful) with(response) {
+                if (this.code() == 200) {
+                    code.postValue(200)
+                    Log.v("statusUser", "succ")
+                    val responseUser = repository.getUser(user).await()
+                    if (responseUser.isSuccessful) with(responseUser) {
+                        if (this.code() == 200) {
+                            callback(this.body()!!)
+                        }
+                    } else {
 
+                    }
+                } else {
+                    code.postValue(600)
+                    Log.v("statusUser1", "fail1")
                 }
             } else {
-                Log.v("statusUser", "fail")
+                code.postValue(500)
+                Log.v("statusUser2", "fail2")
             }
-        } else {
-            Log.v("statusUser", "fail")
         }
     }
 
@@ -90,6 +100,14 @@ class UserViewModel(private val app: Application) : AndroidViewModel(app) {
             }
         }else{
             //Toast.makeText(app, "Ocurrio un error", Toast.LENGTH_LONG).show()
+        }
+    }
+    fun subirExamen(username: String, contador: Int) = viewModelScope.launch(Dispatchers.IO) {
+        val response = repository.subirExamen(username, contador).await()
+        if(response.isSuccessful){
+            when(response.code()){
+                200-> Log.v("subida", "Respuesta subida")
+            }
         }
     }
 
