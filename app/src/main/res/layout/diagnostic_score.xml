@@ -8,6 +8,7 @@
     <TextView android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:text="tu score es"
+              android:textSize="40dp"
               android:textAlignment="center"
     />
 
@@ -16,8 +17,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="0"
-            android:textSize="70dp"
+            android:textSize="120dp"
             android:textAlignment="center"
+    />
+    <Button
+            android:id="@+id/btGoMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textAlignment="center"
+            android:text="Volver"
     />
 
 

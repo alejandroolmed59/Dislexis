@@ -1,5 +1,6 @@
 package com.example.olmedo.dislexis.Activities
 
+import android.content.Intent
 import android.content.res.Configuration
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -43,7 +44,7 @@ class DiagnosticActivity : AppCompatActivity(), PreguntaFragment.OnFragmentInter
         if(preguntasList.size> contadorPregunta) initMainFragment(contadorPregunta)
         else { if(user!=null) {
             userViewModel.subirExamen(user.username!!, contadorRespuestaCorrecta )
-            Toast.makeText(this, "Completada "+contadorRespuestaCorrecta, Toast.LENGTH_LONG).show()
+            startActivity(Intent(this, ScoreActivity::class.java).putExtra("score", contadorRespuestaCorrecta))
         } }
 
 
