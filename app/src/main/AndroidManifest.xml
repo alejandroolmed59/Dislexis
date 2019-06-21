@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.olmedo.dislexis">
+    package="com.example.olmedo.dislexis">
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-            android:allowBackup="true"
-            android:icon="@mipmap/ic_dislexis_logo"
-            android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_dislexis_logo"
-            android:supportsRtl="true"
-            android:theme="@style/AppTheme">
-        <activity android:name=".Activities.ScoreActivity">
-        </activity>
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_dislexis_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_dislexis_logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Activities.ScoreActivity"></activity>
         <activity
-                android:name=".Activities.registerActivity"
-                android:label="@string/title_activity_register"
-                android:theme="@style/AppTheme.NoActionBar"/>
+            android:name=".Activities.registerActivity"
+            android:label="@string/title_activity_register"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
-                android:name=".Activities.menuActivity"
-                android:label="@string/title_activity_menu"
-                android:theme="@style/AppTheme.NoActionBar"/>
+            android:name=".Activities.menuActivity"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Activities.MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.DiagnosticActivity"/>
+        <activity android:name=".Activities.DiagnosticActivity" />
+        <activity android:name=".Activities.TestActivity"></activity>
     </application>
 
 </manifest>

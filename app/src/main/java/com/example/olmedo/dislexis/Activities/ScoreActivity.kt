@@ -1,5 +1,6 @@
 package com.example.olmedo.dislexis.Activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.olmedo.dislexis.R
@@ -10,7 +11,10 @@ class ScoreActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.diagnostic_score)
-        //val score = intent.getIntExtra("score")
-        //tv_score.text = score.toString()
+        val score = intent.getStringExtra("score")
+        tv_score.text = score
+        btGoMain.setOnClickListener {
+            startActivity(Intent(this, menuActivity::class.java))
+        }
     }
 }

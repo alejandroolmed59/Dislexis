@@ -110,3 +110,55 @@ data class Paciente (
     @field: Json(name="usernamePaciente")
     val usernamePaciente:String?
 )
+
+data class Desafio (
+        @field: Json(name="img")
+        val img: String,
+
+        @field: Json(name="respuesta1")
+        val respuesta1:String,
+
+        @field: Json(name="respuesta2")
+        val respuesta2:String,
+
+        @field: Json(name="respuesta3")
+        val respuesta3:String,
+
+        @field: Json(name="respuesta4")
+        val respuesta4:String,
+
+        @field: Json(name="respuestaCorrecta")
+        val respuestaCorrecta: String
+):Parcelable {
+    constructor(parcel: Parcel) : this(
+            parcel.readString(),
+            parcel.readString(),
+            parcel.readString(),
+            parcel.readString(),
+            parcel.readString(),
+            parcel.readString()) {
+    }
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(img)
+        parcel.writeString(respuesta1)
+        parcel.writeString(respuesta2)
+        parcel.writeString(respuesta3)
+        parcel.writeString(respuesta4)
+        parcel.writeString(respuestaCorrecta)
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<Desafio> {
+        override fun createFromParcel(parcel: Parcel): Desafio {
+            return Desafio(parcel)
+        }
+
+        override fun newArray(size: Int): Array<Desafio?> {
+            return arrayOfNulls(size)
+        }
+    }
+}

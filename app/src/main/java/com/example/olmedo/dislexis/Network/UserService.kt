@@ -29,6 +29,9 @@ interface UserService{
     @POST("/getOneUser/{username}/{contador}")
     fun subirExamen(@Path("username") username: String, @Path("contador") contador: Int) :Deferred<Response<Examen>>
 
+    @GET("/desafio/")
+    fun getDesafios():Deferred<Response<List<Desafio>>>
+
     companion object {
 
         var INSTANCE: UserService?= null

@@ -12,6 +12,7 @@ import com.example.olmedo.dislexis.Database.repositories.Repository
 import com.example.olmedo.dislexis.Database.entities.DTO.userAuthorization
 import com.example.olmedo.dislexis.Database.entities.User
 import com.example.olmedo.dislexis.Database.entities.UserLogged
+import com.example.olmedo.dislexis.Network.Desafio
 import com.example.olmedo.dislexis.Network.Examen
 import com.example.olmedo.dislexis.Network.UserRetro
 import com.example.olmedo.dislexis.Network.UserService
@@ -19,7 +20,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class UserViewModel(private val app: Application) : AndroidViewModel(app) {
-
     private val repository: Repository
     var code = MutableLiveData<Int>()
 
@@ -28,8 +28,8 @@ class UserViewModel(private val app: Application) : AndroidViewModel(app) {
         val userService = UserService.getUserService()
         repository = Repository(userDao, userService)
     }
-
     val preguntasList = MutableLiveData<MutableList<Examen>>()
+    val desafiosList = MutableLiveData<MutableList<Desafio>>()
 
     private suspend fun insert(user: User) = repository.insert(user)
 
@@ -110,6 +110,15 @@ class UserViewModel(private val app: Application) : AndroidViewModel(app) {
             }
         }
     }
-
+    fun getDesafios() = viewModelScope.launch(Dispatchers.IO) {
+        val response = repository.getDesafios().await()
+        if(response.isSuccessful){
+            when(response.code()){
+                200->desafiosList.postValue(response.body()?.toMutableList()?:arrayListOf(Desafio("", "", "", "", "", "")))
+            }
+        }else{
+            //Toast.makeText(app, "Ocurrio un error", Toast.LENGTH_LONG).show()
+        }
+    }
 }
 

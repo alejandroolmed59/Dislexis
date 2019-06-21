@@ -1,18 +1,14 @@
 package com.example.olmedo.dislexis.Activities
 
 import android.content.Intent
-import android.content.res.Configuration
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.olmedo.dislexis.AppConstants
 import com.example.olmedo.dislexis.Network.Examen
-import com.example.olmedo.dislexis.PreguntaFragment
+import com.example.olmedo.dislexis.Fragments.PreguntaFragment
 import com.example.olmedo.dislexis.R
 import com.example.olmedo.dislexis.ViewModels.UserViewModel
 
@@ -44,7 +40,7 @@ class DiagnosticActivity : AppCompatActivity(), PreguntaFragment.OnFragmentInter
         if(preguntasList.size> contadorPregunta) initMainFragment(contadorPregunta)
         else { if(user!=null) {
             userViewModel.subirExamen(user.username!!, contadorRespuestaCorrecta )
-            startActivity(Intent(this, ScoreActivity::class.java).putExtra("score", contadorRespuestaCorrecta))
+            startActivity(Intent(this, ScoreActivity::class.java).putExtra("score", contadorRespuestaCorrecta.toString()))
         } }
 
 
