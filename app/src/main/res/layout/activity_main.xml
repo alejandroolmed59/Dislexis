@@ -10,13 +10,13 @@
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/gradient"
+            android:src="@drawable/f"
             android:scaleType="centerCrop"
     />
     <LinearLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
-            android:background="#45000000"
+            android:background="@drawable/gradient"
             android:gravity="center"
             android:layout_height="match_parent">
         <ImageView
@@ -29,6 +29,7 @@
 
 
         <EditText
+                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_action_user"
@@ -49,6 +50,7 @@
 
 
         <EditText
+                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/editText2"
@@ -104,14 +106,15 @@
                     android:layout_height="wrap_content"
                     android:text="Registrate"
                     android:id="@+id/textViewRegister"
-                    android:background="@drawable/btn_fondo_color"
+                    android:background="@android:color/transparent"
                     android:layout_marginLeft="10dp"
-                    android:textColor="@color/text_btn_color"/>
+                    android:textColor="#fff"/>
 
         </LinearLayout>
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/ly_about"
                 android:gravity="center">
             <TextView
                     android:id="@+id/goToAboutUs"
