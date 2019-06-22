@@ -50,26 +50,21 @@ class TestActivity : AppCompatActivity(), DesafioFragment.OnFragmentInteractionL
     }
 
     override fun clickValidarRespuesta(respuesta: String) {
-        if (respuesta == desafioList[contadorDesafio].respuestaCorrecta) {
-            //contadorRespuestasCorrectas++
-            tv_question_result.text = "Correct"
-            tv_question_result.setTextColor(Color.parseColor("#00A025"))
-            iv_question_result.setImageDrawable(resources.getDrawable(R.drawable.ic_checked))
-        } else {
-            tv_question_result.text = "Incorrect"
-            tv_question_result.setTextColor(Color.parseColor("#C91200"))
-            iv_question_result.setImageDrawable(resources.getDrawable(R.drawable.ic_cancel))
-        }
-
+        val bool = respuesta == desafioList[contadorDesafio].respuestaCorrecta
+        mainFragment.auxClickValidarRespuesta(bool)
     }
 
     override fun clickSiguienteDesafio(respuesta: String) {
         Log.d("RESOURCE", resources.getString(R.string.txt_answer_initial))
         Log.d("RESPUESTAVACIA", respuesta)
+
         if (respuesta != resources.getString(R.string.txt_answer_initial)) {
             if (respuesta == desafioList[contadorDesafio].respuestaCorrecta) contadorRespuestasCorrectas++
-            contadorDesafio++
-            if (desafioList.size > contadorDesafio) {
+
+            if (desafioList.size > contadorDesafio+1) {
+                Log.v("contador1", contadorDesafio.toString())
+                contadorDesafio++
+                Log.v("contador2", contadorDesafio.toString())
                 initMainFragment(contadorDesafio)
             } else {
                 Toast.makeText(

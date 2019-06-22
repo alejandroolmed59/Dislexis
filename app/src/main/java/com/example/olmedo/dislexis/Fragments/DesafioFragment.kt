@@ -111,6 +111,18 @@ class DesafioFragment : Fragment(), View.OnDragListener, View.OnLongClickListene
         }
     }
 
+    fun auxClickValidarRespuesta(respuesta: Boolean){
+        if(respuesta){
+            tv_question_result.text = "Correct"
+            tv_question_result.setTextColor(Color.parseColor("#00A025"))
+            iv_question_result.setImageDrawable(resources.getDrawable(R.drawable.ic_checked))
+        }else{
+            tv_question_result.text = "Incorrect"
+            tv_question_result.setTextColor(Color.parseColor("#C91200"))
+            iv_question_result.setImageDrawable(resources.getDrawable(R.drawable.ic_cancel))
+        }
+    }
+
     override fun onDetach() {
         super.onDetach()
         listener = null
