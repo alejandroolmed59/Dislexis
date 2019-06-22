@@ -65,12 +65,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
     fun nuevaActivity(user: UserRetro){
-        if(user!=null) {
             AppConstants.user= user
             loadingBar.dismiss()
             startActivity(Intent(this, menuActivity::class.java))
-        }
-
     }
 
     private fun isNetworkAvailable(): Boolean {
