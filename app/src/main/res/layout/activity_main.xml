@@ -16,7 +16,7 @@
     <LinearLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
-            android:background="#d8000000"
+            android:background="@drawable/gradient"
             android:gravity="center"
             android:layout_height="match_parent">
         <ImageView
@@ -25,10 +25,11 @@
                 android:layout_height="150dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginBottom="50dp"
-                app:srcCompat="@drawable/logo"/>
+                app:srcCompat="@drawable/ic_logo_nice"/>
 
 
         <EditText
+                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_action_user"
@@ -49,6 +50,7 @@
 
 
         <EditText
+                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/editText2"
@@ -78,7 +80,7 @@
                 android:layout_marginRight="20dp"
                 android:background="@drawable/btn_fondo_color"
                 android:text="Log in"
-                android:textColor="#fff"
+                android:textColor="@color/text_btn_color"
                 android:textSize="16sp"
                 android:elevation="5dp"/>
 
@@ -109,6 +111,23 @@
                     android:textColor="#fff"/>
 
         </LinearLayout>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ly_about"
+                android:gravity="center">
+            <TextView
+                    android:id="@+id/goToAboutUs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="About us"
+                    android:textSize="16sp"
+                    android:textColor="#fff"
+            />
+
+
+        </LinearLayout>
+
 
     </LinearLayout>
 

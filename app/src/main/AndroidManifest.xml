@@ -7,12 +7,24 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_dislexis_logo"
+        android:icon="@mipmap/ic_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_dislexis_logo"
+        android:roundIcon="@mipmap/ic_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.ScoreActivity"></activity>
+        <activity android:name=".Activities.splashActivity"
+            android:theme="@style/SplashTheme"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activities.About"
+            android:label="@string/title_activity_about"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Activities.ScoreActivity" />
         <activity
             android:name=".Activities.registerActivity"
             android:label="@string/title_activity_register"
@@ -22,14 +34,9 @@
             android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Activities.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Activities.DiagnosticActivity" />
-        <activity android:name=".Activities.TestActivity"></activity>
+        <activity android:name=".Activities.TestActivity" />
     </application>
 
 </manifest>

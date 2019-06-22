@@ -1,85 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:orientation="vertical"
-              android:layout_width="350dp"
-              android:layout_height="475dp"
-              android:background="#CACACA"
-              tools:context=".Fragments.PreguntaFragment"
-              android:padding="5dp"
-              android:layout_gravity="center">
-
-    <androidx.cardview.widget.CardView
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            app:cardCornerRadius="20dp"
-            android:layout_margin="10dp">
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/gradient"
+        android:gravity="center"
+        android:layout_height="match_parent">
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_width="350dp"
+            android:layout_height="535dp"
+            android:background="#45000000"
+            tools:context=".Fragments.PreguntaFragment"
+            android:padding="5dp"
+            android:layout_gravity="center">
 
-        <TextView
+        <androidx.cardview.widget.CardView
+                android:foreground="?android:attr/selectableItemBackground"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="pregunta"
-                android:textSize="30dp"
-                android:textAlignment="center"
-                android:id="@+id/pregunta"
-                android:textStyle="bold"
-                android:textColor="@color/darkblue"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="5dp"/>
+                android:layout_height="250dp"
+                app:cardCornerRadius="20dp"
+                android:layout_margin="10dp">
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-    </LinearLayout>
-    </androidx.cardview.widget.CardView>
-    <LinearLayout
-            android:layout_marginTop="15dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="pregunta"
+                        android:textSize="30dp"
+                        android:textAlignment="center"
+                        android:id="@+id/pregunta"
+                        android:textStyle="bold"
+                        android:textColor="@color/darkblue"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
         <LinearLayout
-                android:background="@color/green"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:id="@+id/ly_correcto"
-                android:layout_width="0dp"
-                android:layout_height="100dp">
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <LinearLayout
+                    android:background="@color/green"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:id="@+id/ly_correcto"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp">
 
 
-            <TextView
-                    android:id="@+id/tv_correcta"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <TextView
+                        android:id="@+id/tv_correcta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
 
-                    android:text="Correcta"
-                    android:textSize="30sp"
-                    android:textColor="@color/white"/>
+                        android:text="Correcta"
+                        android:textSize="30sp"
+                        android:textColor="@color/white"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:id="@+id/ly_incorrecto"
+                    android:background="#DD7171"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:clickable="true"
+                    android:layout_height="100dp">
+
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tv_incorrecta"
+                        android:text="Incorrecta"
+                        android:textSize="30sp"
+                        android:textColor="@color/white"/>
+            </LinearLayout>
         </LinearLayout>
-        <LinearLayout
-                android:id="@+id/ly_incorrecto"
-                android:background="#DD7171"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:clickable="true"
-                android:layout_height="100dp">
 
 
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tv_incorrecta"
-                    android:text="Incorrecta"
-                    android:textSize="30sp"
-                    android:textColor="@color/white"/>
-        </LinearLayout>
-    </LinearLayout>
-
-
-
-</LinearLayout>
+    </LinearLayout></LinearLayout>

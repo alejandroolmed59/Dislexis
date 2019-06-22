@@ -20,7 +20,7 @@
         <LinearLayout
                 android:layout_width="match_parent"
                 android:orientation="vertical"
-                android:background="#d8000000"
+                android:background="@drawable/gradient"
                 android:gravity="center"
                 android:layout_height="match_parent">
             <ImageView
@@ -37,6 +37,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/username"
                     android:hint="Username"
+                    android:textStyle="bold"
                     android:inputType="text"
                     android:layout_marginBottom="15dp"
                     android:textColor="#fff"
@@ -63,6 +64,7 @@
                     android:paddingRight="10dp"
                     android:paddingTop="10dp"
                     android:paddingBottom="10dp"
+                    android:textStyle="bold"
                     android:textColorHint="#ccc"/>
 
 
@@ -74,6 +76,7 @@
                     android:inputType="textPassword"
                     android:layout_marginBottom="15dp"
                     android:textColor="#fff"
+                    android:textStyle="bold"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:background="@drawable/input"
@@ -87,6 +90,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/medicoReferencia"
                     android:hint="Medico referencia "
+                    android:textStyle="bold"
                     android:layout_marginBottom="20dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
@@ -109,7 +113,7 @@
                         android:layout_height="wrap_content"
                         android:text="¿Es usted paciente?"
                         android:textSize="16sp"
-                        android:textColor="#fff"
+                        android:textColor="@color/white"
                 />
 
 
@@ -133,7 +137,7 @@
                     android:layout_marginRight="20dp"
                     android:background="@drawable/btn_fondo_color"
                     android:text="Register"
-                    android:textColor="#fff"
+                    android:textColor="@color/text_btn_color"
                     android:textSize="16sp"
                     android:elevation="5dp"/>
             <LinearLayout

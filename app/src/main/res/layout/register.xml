@@ -10,13 +10,13 @@
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/f"
+            android:src="@drawable/gradient"
             android:scaleType="centerCrop"
     />
     <LinearLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
-            android:background="#d8000000"
+            android:background="#45000000"
             android:gravity="center"
             android:layout_height="match_parent">
         <ImageView
@@ -32,6 +32,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/username"
                 android:hint="Username"
+                android:textStyle="bold"
                 android:inputType="text"
                 android:layout_marginBottom="15dp"
                 android:textColor="#fff"
@@ -48,6 +49,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/email"
                 android:hint="Email"
+                android:textStyle="bold"
                 android:inputType="textEmailAddress"
                 android:layout_marginBottom="15dp"
                 android:textColor="#fff"
@@ -67,6 +69,7 @@
                 android:id="@+id/password"
                 android:hint="Password"
                 android:inputType="textPassword"
+                 android:textStyle="bold"
                 android:layout_marginBottom="15dp"
                 android:textColor="#fff"
                 android:layout_marginLeft="20dp"
@@ -88,6 +91,7 @@
                 android:background="@drawable/input"
                 android:paddingLeft="20dp"
                 android:paddingRight="10dp"
+            android:textStyle="bold"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 android:textColorHint="#ccc"
@@ -128,7 +132,7 @@
                 android:layout_marginRight="20dp"
                 android:background="@drawable/btn_fondo_color"
                 android:text="Register"
-                android:textColor="#fff"
+                android:textColor="@color/text_btn_color"
                 android:textSize="16sp"
                 android:elevation="5dp"/>
         <LinearLayout
@@ -153,7 +157,7 @@
                     android:id="@+id/go_to_login"
                     android:background="@android:color/transparent"
                     android:layout_marginLeft="10dp"
-                    android:textColor="#fff"/>
+                    android:textColor="@color/white"/>
 
         </LinearLayout>
 

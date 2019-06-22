@@ -1,33 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:background="@drawable/gradient"
+        android:gravity="center"
+        android:id="@+id/ll"
+        tools:context=".Activities.menuActivity">
 
-
-    <TextView android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:text="tu score es"
-              android:textSize="40dp"
-              android:textAlignment="center"
-    />
-
-    <TextView
-            android:id="@+id/tv_score"
+    <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:textSize="120dp"
-            android:textAlignment="center"
-    />
-    <Button
-            android:id="@+id/btGoMain"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:textAlignment="center"
-            android:text="Volver"
-    />
+            android:orientation="vertical"
+            android:background="#45000000"
+            android:gravity="center"
+            android:layout_height="match_parent">
+        <LinearLayout
+                android:clipToPadding="false"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <androidx.cardview.widget.CardView
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:layout_width="340dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardElevation="4dp"
+                    app:cardCornerRadius="4dp"
+                    android:layout_height="450dp"
+                    android:layout_margin="10dp">
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center">
+                    <ImageView
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:background="@drawable/cerclebackgroundpurple"
+                            android:src="@drawable/ic_sentiment_very_satisfied_black_24dp"
+                            android:padding="10dp"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textSize="30dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Tu score es"/>
+                    <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/lightgray"
+                            android:layout_margin="10dp"/>
+                    <TextView
+                            android:id="@+id/tv_score"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="0"
+                            android:padding="5dp"
+                            android:textSize="80dp"
+                            android:textColor="#000000"/>
+                    <TextView android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:textStyle="bold"
+                              android:text="gracias por usar Dislexis "/>
 
+                    <Button android:layout_width="43dp"
+                            android:layout_height="42dp"
+                            android:layout_marginTop="20dp"
+                            android:textAlignment="center"
+                            android:background="@drawable/ic_home_black_24dp"
+                            android:id="@+id/btGoMain"
+                    />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                              android:text="home"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
+        </LinearLayout>
+
+    </LinearLayout>
 </LinearLayout>

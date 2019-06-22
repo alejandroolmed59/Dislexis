@@ -6,6 +6,7 @@ import android.content.Intent
 import android.net.ConnectivityManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -22,17 +23,10 @@ class MainActivity : AppCompatActivity() {
     lateinit var userViewModel: UserViewModel
     lateinit var loadingBar : ProgressDialog
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
-
-        setTheme(R.style.AppTheme) //added for spalsh screen
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         userViewModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
-
-
-
 
         textViewLogin.setOnClickListener(){
             if (isNetworkAvailable()) {
@@ -66,6 +60,9 @@ class MainActivity : AppCompatActivity() {
         }
         textViewRegister.setOnClickListener(){
             startActivity(Intent(this, registerActivity::class.java)) }
+        goToAboutUs.setOnClickListener(){
+            startActivity(Intent(this, About::class.java ))
+        }
     }
     fun nuevaActivity(user: UserRetro){
         if(user!=null) {
@@ -81,9 +78,6 @@ class MainActivity : AppCompatActivity() {
         val activeNetworkInfo = connectivityManager.activeNetworkInfo
         return activeNetworkInfo != null && activeNetworkInfo.isConnected
     }
-
-
-
 
 
 }
