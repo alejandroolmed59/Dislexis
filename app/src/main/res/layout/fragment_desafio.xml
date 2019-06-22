@@ -1,48 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <ImageView
         android:id="@+id/iv_Reto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/regular_padding" />
+
+    <TextView
+        android:id="@+id/tv_answer"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/dynamic_test_answer"
+        android:gravity="center"
+        android:text="@string/txt_answer_initial"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
         android:orientation="horizontal">
-        <LinearLayout
+
+        <ImageView
+            android:id="@+id/iv_question_result"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/tv_question_result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <Button
-                android:id="@+id/respuesta1"
-                android:layout_width="wrap_content"
-                android:text="hola"
-                android:layout_height="wrap_content" />
-            <Button
-                android:id="@+id/respuesta2"
-                android:layout_width="wrap_content"
-                android:text="hola"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/regular_padding"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/respuesta1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-        <Button
+            android:layout_margin="10dp"
+            android:background="@drawable/dynamic_test_option"
+            android:padding="10dp"
+            android:text="hola"
+            android:textColor="#FFF"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/respuesta2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/dynamic_test_option"
+            android:padding="10dp"
+            android:text="hola"
+            android:textColor="#FFF"
+            android:textStyle="bold" />
+
+
+        <TextView
             android:id="@+id/respuesta3"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/dynamic_test_option"
+            android:padding="10dp"
             android:text="hola"
-            android:layout_height="wrap_content" />
-        <Button
-            android:layout_width="wrap_content"
-            android:text="hola"
+            android:textColor="#FFF"
+            android:textStyle="bold" />
+
+        <TextView
             android:id="@+id/respuesta4"
-            android:layout_height="wrap_content" />
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        </LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/dynamic_test_option"
+            android:padding="10dp"
+            android:text="hola"
+            android:textColor="#FFF"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_validate_answer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/regular_padding"
+            android:layout_marginRight="@dimen/regular_padding"
+            android:text="Validar" />
+
+        <Button
+            android:id="@+id/btn_dynamic_siguiente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/regular_padding"
+            android:layout_marginLeft="@dimen/regular_padding"
+            android:text="Siguiente" />
     </LinearLayout>
 
 </LinearLayout>
