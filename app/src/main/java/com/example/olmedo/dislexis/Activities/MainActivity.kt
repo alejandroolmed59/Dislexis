@@ -66,6 +66,9 @@ class MainActivity : AppCompatActivity() {
         }
         textViewRegister.setOnClickListener(){
             startActivity(Intent(this, registerActivity::class.java)) }
+        goToAboutUs.setOnClickListener(){
+            startActivity(Intent(this, About::class.java ))
+        }
     }
     fun nuevaActivity(user: UserRetro){
         if(user!=null) {

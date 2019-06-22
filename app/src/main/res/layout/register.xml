@@ -10,13 +10,13 @@
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/f"
+            android:src="@drawable/gradient"
             android:scaleType="centerCrop"
     />
     <LinearLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
-            android:background="#d8000000"
+            android:background="#45000000"
             android:gravity="center"
             android:layout_height="match_parent">
         <ImageView
@@ -128,7 +128,7 @@
                 android:layout_marginRight="20dp"
                 android:background="@drawable/btn_fondo_color"
                 android:text="Register"
-                android:textColor="#fff"
+                android:textColor="@color/text_btn_color"
                 android:textSize="16sp"
                 android:elevation="5dp"/>
         <LinearLayout
@@ -151,9 +151,9 @@
                     android:layout_height="wrap_content"
                     android:text="Iniciar Sesión"
                     android:id="@+id/go_to_login"
-                    android:background="@android:color/transparent"
+                    android:background="@drawable/btn_fondo_color"
                     android:layout_marginLeft="10dp"
-                    android:textColor="#fff"/>
+                    android:textColor="@color/text_btn_color"/>
 
         </LinearLayout>
 

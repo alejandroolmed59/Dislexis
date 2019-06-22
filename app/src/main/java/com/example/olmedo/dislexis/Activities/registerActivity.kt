@@ -29,7 +29,7 @@ class registerActivity : AppCompatActivity() {
         setContentView(R.layout.register)
 
         Glide.with(this)
-            .load(R.drawable.register)
+            .load(R.drawable.ic_register)
             .into(registerImage)
 
         userViewModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
