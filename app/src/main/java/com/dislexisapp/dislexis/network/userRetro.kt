@@ -13,25 +13,25 @@ data class UserRetro(
 
 
     @field: Json(name="medicoReferencia")
-    val medicoReferencia:String?="N/A",
+    val medicoReferencia:String="N/A",
 
     @field: Json(name="username")
-    val username: String?="N/A",
+    val username: String="N/A",
 
     @field: Json(name="nombreCompleto")
-    val nombreCompleto: String?="N/A",
+    val nombreCompleto: String="N/A",
 
     @field: Json(name="email")
-    val email:String?="N/A",
+    val email:String="N/A",
 
     @field: Json(name="isPaciente")
-    val isPaciente:String?="N/A",
+    val isPaciente:String="N/A",
 
     @field: Json(name="examenes")
-    var examenes: List<ExamenRetro>?= emptyList(),
+    var examenes: List<ExamenRetro> = emptyList(),
 
     @field: Json(name="pacientes")
-    var pacientes: List<Paciente>? = emptyList()
+    var pacientes: List<Paciente> = emptyList()
 
 ):Parcelable {
     constructor(parcel: Parcel) : this(
@@ -68,24 +68,24 @@ data class UserRetro(
 
 data class ExamenRetro (
     @field: Json(name="_id")
-    val _id: String?,
+    val _id: String= "N/A",
 
     @field: Json(name="correctas")
-    val correctas:String?
+    val correctas:String= "N/A"
 )
 
 data class Examen (
     @field: Json(name="pregunta")
-    val pregunta: String?,
+    val pregunta: String= "N/A",
 
     @field: Json(name="respuesta1")
-    val respuesta1:String?,
+    val respuesta1:String= "N/A",
 
     @field: Json(name="respuesta2")
-    val respuesta2:String?,
+    val respuesta2:String= "N/A",
 
     @field: Json(name="respuestaCorrecta")
-    val respuestaCorrecta:String?
+    val respuestaCorrecta:String= "N/A"
 
 ):Parcelable {
     constructor(parcel: Parcel) : this(
@@ -119,30 +119,33 @@ data class Examen (
 
 data class Paciente (
     @field: Json(name="_id")
-    val _id: String?,
+    val _id: String= "N/A",
 
     @field: Json(name="usernamePaciente")
-    val usernamePaciente:String?
+    val usernamePaciente:String= "N/A",
+
+    @field: Json(name="nombreCompleto")
+    val nombreCompleto:String= "N/A"
 )
 
 data class Desafio (
         @field: Json(name="img")
-        val img: String,
+        val img: String = "N/A",
 
         @field: Json(name="respuesta1")
-        val respuesta1:String,
+        val respuesta1:String = "N/A",
 
         @field: Json(name="respuesta2")
-        val respuesta2:String,
+        val respuesta2:String = "N/A",
 
         @field: Json(name="respuesta3")
-        val respuesta3:String,
+        val respuesta3:String = "N/A",
 
         @field: Json(name="respuesta4")
-        val respuesta4:String,
+        val respuesta4:String = "N/A",
 
         @field: Json(name="respuestaCorrecta")
-        val respuestaCorrecta: String
+        val respuestaCorrecta: String = "N/A"
 ):Parcelable {
     constructor(parcel: Parcel) : this(
             parcel.readString(),

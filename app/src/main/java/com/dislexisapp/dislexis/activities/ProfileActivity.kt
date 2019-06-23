@@ -11,10 +11,16 @@ import com.dislexisapp.dislexis.R
 import com.dislexisapp.dislexis.fragments.DesafioFragment
 import com.dislexisapp.dislexis.fragments.MedicoFragment
 import com.dislexisapp.dislexis.fragments.PacienteFragment
+import com.dislexisapp.dislexis.network.Paciente
 import com.dislexisapp.dislexis.network.UserRetro
 import com.dislexisapp.dislexis.viewModels.UserViewModel
 
-class ProfileActivity : AppCompatActivity(), PacienteFragment.OnFragmentInteractionListener {
+class ProfileActivity : AppCompatActivity(), PacienteFragment.OnFragmentInteractionListener, MedicoFragment.Listener {
+    lateinit var userViewModel: UserViewModel
+    override fun clickPaciente(paciente: Paciente) {
+        userViewModel.getUser(paciente.usernamePaciente)
+    }
+
 
     override fun onFragmentInteraction(uri: Uri) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
@@ -24,20 +30,27 @@ class ProfileActivity : AppCompatActivity(), PacienteFragment.OnFragmentInteract
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
-        val userViewModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
-        userViewModel.getUser(user!!.username!!)
+        userViewModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
+        userViewModel.getUser(user!!.username)
         userViewModel.userLD.observe(this, Observer {
-            initMainFragment(it)
+            if (it.isPaciente == "true") initFragmentPaciente(it) else {
+                initFragmentMedico(it)
+            }
         })
 
     }
 
-    fun initMainFragment(user: UserRetro) {
-        if(user!=null) {
-            val mainFragment = if (user.isPaciente == "true") PacienteFragment.newInstance(user) else{ MedicoFragment.newInstance("lol","xd")}
-            val resource = R.id.main_fragmentProfile
-            changeFragment(resource, mainFragment)
-        }
+    private fun initFragmentPaciente(user: UserRetro) {
+
+        val mainFragment = PacienteFragment.newInstance(user)
+        val resource = R.id.main_fragmentProfile
+        changeFragment(resource, mainFragment)
+    }
+
+    private fun initFragmentMedico(user: UserRetro) {
+        val mainFragment = MedicoFragment.newInstance(user.pacientes)
+        val resource = R.id.main_fragmentProfile
+        changeFragment(resource, mainFragment)
     }
 
     private fun changeFragment(id: Int, frag: Fragment) {
