@@ -12,7 +12,7 @@
             android:layout_width="350dp"
             android:layout_height="535dp"
             android:background="#45000000"
-            tools:context=".Fragments.PreguntaFragment"
+            tools:context="com.dislexisapp.dislexis.fragments.PreguntaFragment"
             android:padding="5dp"
             android:layout_gravity="center">
 

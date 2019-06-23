@@ -9,7 +9,7 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.me.olmedo.dislexis"
+        applicationId "com.dislexisapp.dislexis"
         minSdkVersion 16
         targetSdkVersion 28
         versionCode 1

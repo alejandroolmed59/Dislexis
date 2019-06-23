@@ -10,7 +10,7 @@
         android:background="@drawable/gradient"
         android:gravity="center"
         android:id="@+id/ll"
-        tools:context=".Activities.menuActivity">
+        tools:context="com.dislexisapp.dislexis.activities.menuActivity">
 
     <LinearLayout
             android:layout_width="match_parent"

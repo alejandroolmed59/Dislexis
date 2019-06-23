@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.me.olmedo.dislexis">
+    package="com.dislexisapp.dislexis">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.splashActivity"
+        <activity android:name="com.dislexisapp.dislexis.activities.splashActivity"
             android:theme="@style/SplashTheme"
             android:noHistory="true">
             <intent-filter>
@@ -21,22 +21,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activities.About"
+            android:name="com.dislexisapp.dislexis.activities.About"
             android:label="@string/title_activity_about"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".Activities.ScoreActivity" />
+        <activity android:name="com.dislexisapp.dislexis.activities.ScoreActivity" />
         <activity
-            android:name=".Activities.registerActivity"
+            android:name="com.dislexisapp.dislexis.activities.registerActivity"
             android:label="@string/title_activity_register"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Activities.menuActivity"
+            android:name="com.dislexisapp.dislexis.activities.menuActivity"
             android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Activities.MainActivity">
+        <activity android:name="com.dislexisapp.dislexis.activities.MainActivity">
         </activity>
-        <activity android:name=".Activities.DiagnosticActivity" />
-        <activity android:name=".Activities.TestActivity" />
+        <activity android:name="com.dislexisapp.dislexis.activities.DiagnosticActivity" />
+        <activity android:name="com.dislexisapp.dislexis.activities.TestActivity" />
     </application>
 
 </manifest>
