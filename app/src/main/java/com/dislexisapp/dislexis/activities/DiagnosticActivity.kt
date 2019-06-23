@@ -35,15 +35,15 @@ class DiagnosticActivity : AppCompatActivity(), PreguntaFragment.OnFragmentInter
         })
     }
     override fun clickSiguientePregunta(respuesta: String) {
-        if(respuesta == "correcta") contadorRespuestaCorrecta++
+        if(respuesta == preguntasList[contadorPregunta].respuestaCorrecta) contadorRespuestaCorrecta++
         contadorPregunta++
         if(preguntasList.size> contadorPregunta) initMainFragment(contadorPregunta)
-        else { if(user!=null) {
-            userViewModel.subirExamen(user.username!!, contadorRespuestaCorrecta )
-            startActivity(Intent(this, ScoreActivity::class.java).putExtra("score", contadorRespuestaCorrecta.toString()))
-        } }
-
-
+        else {
+            if(user!=null) {
+                userViewModel.subirExamen(user.username!!, contadorRespuestaCorrecta )
+                startActivity(Intent(this, ScoreActivity::class.java).putExtra("score", contadorRespuestaCorrecta.toString()))
+            }
+        }
     }
 
     fun initMainFragment(numPregunta: Int){

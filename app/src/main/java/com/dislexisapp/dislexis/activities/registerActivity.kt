@@ -25,8 +25,8 @@ class registerActivity : AppCompatActivity() {
         setContentView(R.layout.register)
 
         Glide.with(this)
-            .load(R.drawable.ic_register)
-            .into(registerImage)
+                .load(R.drawable.ic_register)
+                .into(registerImage)
 
         userViewModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
         rb_isPaciente.setOnClickListener() {
@@ -39,9 +39,9 @@ class registerActivity : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
         }
 
-        if(rb_isPaciente.isChecked){
+        if (rb_isPaciente.isChecked) {
             medicoReferencia.isEnabled = true
-        }else if(!(rb_isPaciente.isChecked)) {
+        } else if (!(rb_isPaciente.isChecked)) {
             medicoReferencia.isEnabled = false
         }
         bt_register.setOnClickListener() {
@@ -57,14 +57,15 @@ class registerActivity : AppCompatActivity() {
                 loadingBar.setCanceledOnTouchOutside(false)
                 loadingBar.show()
                 userViewModel.registerUser(
-                    userAuthorization(
-                        username.text.toString(),
-                        email.text.toString(),
-                        password.text.toString(),
-                        flag,
-                        medicoReferencia.text.toString()
-                    ),
-                    { callback: Boolean -> respuesta(callback) })
+                        userAuthorization(
+                                username.text.toString(),
+                                tv_nombreCompleto.text.toString(),
+                                email.text.toString(),
+                                password.text.toString(),
+                                flag,
+                                medicoReferencia.text.toString()
+                        ),
+                        { callback: Boolean -> respuesta(callback) })
                 userViewModel.code.observe(this, Observer { code ->
                     if (code == 500) {
                         loadingBar.dismiss()
@@ -76,9 +77,9 @@ class registerActivity : AppCompatActivity() {
 
             } else {
                 Snackbar.make(it, "No hay conexion a internet", Snackbar.LENGTH_LONG)
-                    .setAction(
-                        "OK", { it.setOnClickListener { Log.v("ok", "ok") } }
-                    ).show()
+                        .setAction(
+                                "OK", { it.setOnClickListener { Log.v("ok", "ok") } }
+                        ).show()
             }
         }
 

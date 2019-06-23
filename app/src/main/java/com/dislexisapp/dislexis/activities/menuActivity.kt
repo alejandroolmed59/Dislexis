@@ -15,6 +15,10 @@ class  menuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.content_menu)
 
+        card_profile.setOnClickListener(){
+            startActivity(Intent(this, ProfileActivity::class.java))
+        }
+
         card_diagnostic.setOnClickListener(){
             startActivity(Intent(this, DiagnosticActivity::class.java))
         }

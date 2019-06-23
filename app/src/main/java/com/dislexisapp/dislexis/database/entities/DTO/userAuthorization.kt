@@ -6,6 +6,9 @@ data class userAuthorization(
    @field: Json(name="username")
    val username: String,
 
+   @field: Json(name="nombreCompleto")
+   val nombreCompleto: String?,
+
    @field: Json(name="email")
    val email: String?,
 

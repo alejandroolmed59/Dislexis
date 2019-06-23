@@ -12,31 +12,33 @@
         android:roundIcon="@mipmap/ic_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.dislexisapp.dislexis.activities.splashActivity"
-            android:theme="@style/SplashTheme"
-            android:noHistory="true">
+        <activity
+            android:name=".activities.splashActivity"
+            android:noHistory="true"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.dislexisapp.dislexis.activities.About"
+            android:name=".activities.About"
             android:label="@string/title_activity_about"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name="com.dislexisapp.dislexis.activities.ScoreActivity" />
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activities.ScoreActivity" />
         <activity
-            android:name="com.dislexisapp.dislexis.activities.registerActivity"
+            android:name=".activities.registerActivity"
             android:label="@string/title_activity_register"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.dislexisapp.dislexis.activities.menuActivity"
+            android:name=".activities.menuActivity"
             android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.dislexisapp.dislexis.activities.MainActivity">
-        </activity>
-        <activity android:name="com.dislexisapp.dislexis.activities.DiagnosticActivity" />
-        <activity android:name="com.dislexisapp.dislexis.activities.TestActivity" />
+        <activity android:name=".activities.MainActivity"></activity>
+        <activity android:name=".activities.DiagnosticActivity" />
+        <activity android:name=".activities.TestActivity" />
+        <activity android:name=".activities.ProfileActivity"></activity>
     </application>
 
 </manifest>

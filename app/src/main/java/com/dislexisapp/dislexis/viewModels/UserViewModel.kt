@@ -3,6 +3,7 @@ package com.dislexisapp.dislexis.viewModels
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.dislexisapp.dislexis.database.RoomDB
@@ -19,6 +20,7 @@ import kotlinx.coroutines.launch
 class UserViewModel(private val app: Application) : AndroidViewModel(app) {
     private val repository: Repository
     var code = MutableLiveData<Int>()
+    var userLD = MutableLiveData<UserRetro>()
 
     init {
         val userDao = RoomDB.getInstance(app).userDao()
@@ -61,6 +63,7 @@ class UserViewModel(private val app: Application) : AndroidViewModel(app) {
                 userAuthorization(
                     user,
                     null,
+                        null,
                     password,
                     null,
                     null
@@ -88,12 +91,22 @@ class UserViewModel(private val app: Application) : AndroidViewModel(app) {
             }
         }
     }
+    fun getUser (user: String) = viewModelScope.launch(Dispatchers.IO) {
+        val responseUser = repository.getUser(user).await()
+        if (responseUser.isSuccessful) with(responseUser) {
+            if (this.code() == 200) {
+                userLD.postValue(this.body()!!)
+            }
+        } else {
+
+        }
+    }
 
     fun getPreguntas() = viewModelScope.launch(Dispatchers.IO) {
         val response = repository.getPreguntas().await()
         if(response.isSuccessful){
             when(response.code()){
-                200->preguntasList.postValue(response.body()?.toMutableList()?:arrayListOf(Examen("¿¿Wut", "ya", "no")))
+                200->preguntasList.postValue(response.body()?.toMutableList()?:arrayListOf(Examen("¿¿Wut", "ya", "no", "no")))
             }
         }else{
             //Toast.makeText(app, "Ocurrio un error", Toast.LENGTH_LONG).show()

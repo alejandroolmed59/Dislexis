@@ -52,13 +52,13 @@
                     android:orientation="vertical"
                     android:layout_weight="1"
                     android:clickable="true"
-                    android:id="@+id/ly_correcto"
+                    android:id="@+id/ly_respuesta1"
                     android:layout_width="0dp"
                     android:layout_height="100dp">
 
 
                 <TextView
-                        android:id="@+id/tv_correcta"
+                        android:id="@+id/tv_respuesta1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
@@ -67,7 +67,7 @@
                         android:textColor="@color/white"/>
             </LinearLayout>
             <LinearLayout
-                    android:id="@+id/ly_incorrecto"
+                    android:id="@+id/ly_respuesta2"
                     android:background="#DD7171"
                     android:gravity="center"
                     android:orientation="vertical"
@@ -80,7 +80,7 @@
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/tv_incorrecta"
+                        android:id="@+id/tv_respuesta2"
                         android:text="Incorrecta"
                         android:textSize="30sp"
                         android:textColor="@color/white"/>
