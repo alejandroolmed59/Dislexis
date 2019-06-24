@@ -25,7 +25,7 @@
         <activity
             android:name=".activities.AboutActivity"
             android:label="@string/title_activity_about"
-            android:theme="@style/AppTheme.NoActionBar" />
+            />
         <activity android:name=".activities.ScoreActivity" />
         <activity
             android:name=".activities.RegisterActivity"
@@ -34,7 +34,7 @@
         <activity
             android:name=".activities.MenuActivity"
             android:label="@string/title_activity_menu"
-            android:theme="@style/AppTheme.NoActionBar" />
+            />
         <activity android:name=".activities.MainActivity"></activity>
         <activity android:name=".activities.DiagnosticActivity" />
         <activity android:name=".activities.TestActivity" />
