@@ -13,14 +13,14 @@ import com.dislexisapp.dislexis.R
 import com.dislexisapp.dislexis.viewModels.UserViewModel
 
 class DiagnosticActivity : AppCompatActivity(), PreguntaFragment.OnFragmentInteractionListener {
-    val limiteDeDesafios: Int =2
+    val limiteDeDesafios: Int = 2
 
-    var contadorPregunta: Int =0
-    var contadorRespuestaCorrecta: Int =0
+    var contadorPregunta: Int = 0
+    var contadorRespuestaCorrecta: Int = 0
     lateinit var userViewModel: UserViewModel
-    val preguntasList : MutableList<Examen> = arrayListOf()
+    val preguntasList: MutableList<Examen> = arrayListOf()
     val user = AppConstants.user
-    private lateinit var mainFragment : PreguntaFragment
+    private lateinit var mainFragment: PreguntaFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,26 +37,31 @@ class DiagnosticActivity : AppCompatActivity(), PreguntaFragment.OnFragmentInter
             initMainFragment(contadorPregunta)
         })
     }
+
     override fun clickSiguientePregunta(respuesta: String) {
-        if(respuesta == preguntasList[contadorPregunta].respuestaCorrecta) contadorRespuestaCorrecta++
+        if (respuesta == preguntasList[contadorPregunta].respuestaCorrecta) contadorRespuestaCorrecta++
         contadorPregunta++
-        if(preguntasList.size> contadorPregunta) initMainFragment(contadorPregunta)
+        if (preguntasList.size > contadorPregunta) initMainFragment(contadorPregunta)
         else {
-            if(user!=null) {
-                userViewModel.subirExamen(user.username!!, contadorRespuestaCorrecta )
-                startActivity(Intent(this, ScoreActivity::class.java).putExtra("score", contadorRespuestaCorrecta.toString()))
+            if (user != null) {
+                userViewModel.subirExamen(user.username!!, contadorRespuestaCorrecta)
+                val intent =
+                    Intent(this, ScoreActivity::class.java).putExtra("score", contadorRespuestaCorrecta.toString())
+                intent.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
+                startActivity(intent)
             }
         }
     }
 
-    fun initMainFragment(numPregunta: Int){
+    fun initMainFragment(numPregunta: Int) {
         mainFragment = PreguntaFragment.newInstance(preguntasList[numPregunta])
-        val resource =  R.id.main_fragment
+        val resource = R.id.main_fragment
         changeFragment(resource, mainFragment)
     }
 
 
-    private fun changeFragment(id: Int, frag: Fragment){
+    private fun changeFragment(id: Int, frag: Fragment) {
         supportFragmentManager.beginTransaction().replace(id, frag).commit()
     }
 }

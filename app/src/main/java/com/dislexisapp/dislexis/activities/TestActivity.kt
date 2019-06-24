@@ -15,7 +15,7 @@ import com.dislexisapp.dislexis.R
 import com.dislexisapp.dislexis.viewModels.UserViewModel
 
 class TestActivity : AppCompatActivity(), DesafioFragment.OnFragmentInteractionListener {
-    val limiteDePreguntas: Int =2
+    val limiteDePreguntas: Int = 2
 
     var contadorRespuestasCorrectas: Int = 0
     var contadorDesafio: Int = 0
@@ -32,7 +32,7 @@ class TestActivity : AppCompatActivity(), DesafioFragment.OnFragmentInteractionL
             it.shuffle()
 
             desafioList.clear()
-            desafioList.addAll(it.subList(0 , limiteDePreguntas))
+            desafioList.addAll(it.subList(0, limiteDePreguntas))
             initMainFragment(contadorDesafio)
         })
 
@@ -55,19 +55,21 @@ class TestActivity : AppCompatActivity(), DesafioFragment.OnFragmentInteractionL
     }
 
     override fun clickSiguienteDesafio(respuesta: String) {
-        Log.d("RESOURCE", resources.getString(R.string.txt_answer_initial))
-        Log.d("RESPUESTAVACIA", respuesta)
 
         if (respuesta != resources.getString(R.string.txt_answer_initial)) {
             if (respuesta == desafioList[contadorDesafio].respuestaCorrecta) contadorRespuestasCorrectas++
 
-            if (desafioList.size > contadorDesafio+1) {
+            if (desafioList.size > contadorDesafio + 1) {
                 Log.v("contador1", contadorDesafio.toString())
                 contadorDesafio++
                 Log.v("contador2", contadorDesafio.toString())
                 initMainFragment(contadorDesafio)
             } else {
-                startActivity(Intent(this, ScoreActivity::class.java).putExtra("score", contadorRespuestasCorrectas.toString()))
+                val intent =
+                    Intent(this, ScoreActivity::class.java).putExtra("score", contadorRespuestasCorrectas.toString())
+                intent.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
+                startActivity(intent)
             }
         } else {
             Toast.makeText(

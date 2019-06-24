@@ -9,23 +9,28 @@ import com.dislexisapp.dislexis.R
 import kotlinx.android.synthetic.main.content_menu.*
 
 
-class  MenuActivity : AppCompatActivity() {
-
+class MenuActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.content_menu)
 
-        card_profile.setOnClickListener(){
+        card_profile.setOnClickListener() {
             startActivity(Intent(this, ProfileActivity::class.java))
         }
 
-        card_diagnostic.setOnClickListener(){
-            startActivity(Intent(this, DiagnosticActivity::class.java))
+        card_diagnostic.setOnClickListener() {
+            val intent = Intent(this, DiagnosticActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
+            startActivity(intent)
         }
-        card_test.setOnClickListener(){
-            startActivity(Intent(this, TestActivity::class.java))
+        card_test.setOnClickListener() {
+            val intent = Intent(this, TestActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
+            startActivity(intent)
 
         }
     }
