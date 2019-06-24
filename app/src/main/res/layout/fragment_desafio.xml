@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
+    android:layout_height="match_parent"
     android:background="@drawable/gradient"
     android:gravity="center"
-    android:layout_height="match_parent">
+    android:orientation="vertical">
+
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="350dp"
         android:layout_height="535dp"
+        android:layout_gravity="center"
         android:background="#45000000"
-        tools:context="com.dislexisapp.dislexis.fragments.PreguntaFragment"
+        android:orientation="vertical"
         android:padding="5dp"
-        android:layout_gravity="center">
+        tools:context="com.dislexisapp.dislexis.fragments.PreguntaFragment">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -76,18 +76,19 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:gravity="center"
-                    android:layout_weight="4"
                     android:layout_margin="@dimen/regular_padding"
+                    android:layout_weight="4"
+                    android:gravity="center"
                     android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/respuesta1"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:background="@drawable/dynamic_test_option"
+                        android:gravity="center"
                         android:padding="10dp"
                         android:text="hola"
                         android:textColor="#FFF"
@@ -96,11 +97,12 @@
                     <TextView
                         android:id="@+id/respuesta2"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/dynamic_test_option"
-                        android:padding="10dp"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/dynamic_test_option"
+                        android:gravity="center"
+                        android:padding="10dp"
                         android:text="hola"
                         android:textColor="#FFF"
                         android:textStyle="bold" />
@@ -109,11 +111,12 @@
                     <TextView
                         android:id="@+id/respuesta3"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/dynamic_test_option"
-                        android:padding="10dp"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/dynamic_test_option"
+                        android:gravity="center"
+                        android:padding="10dp"
                         android:text="hola"
                         android:textColor="#FFF"
                         android:textStyle="bold" />
@@ -121,10 +124,11 @@
                     <TextView
                         android:id="@+id/respuesta4"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:background="@drawable/dynamic_test_option"
+                        android:gravity="center"
                         android:padding="10dp"
                         android:text="hola"
                         android:textColor="#FFF"
@@ -133,19 +137,20 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_marginTop="15dp"
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
                     <LinearLayout
-                        android:background="@color/green"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:layout_weight="1"
-                        android:clickable="true"
                         android:id="@+id/btn_validate_answer"
                         android:layout_width="0dp"
-                        android:layout_height="100dp">
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        android:background="@color/green"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
 
                         <TextView
@@ -154,25 +159,27 @@
                             android:layout_height="wrap_content"
 
                             android:text="Validar"
-                            android:textSize="30sp"
-                            android:textColor="@color/white"/>
+                            android:textColor="@color/white"
+                            android:textSize="30sp" />
                     </LinearLayout>
+
                     <LinearLayout
                         android:id="@+id/btn_dynamic_siguiente"
-                        android:background="#DD7171"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:layout_weight="1"
                         android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_weight="1"
+                        android:background="#DD7171"
                         android:clickable="true"
-                        android:layout_height="100dp">
+                        android:gravity="center"
+                        android:orientation="vertical">
+
                         <TextView
+                            android:id="@+id/tv_respuesta2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/tv_respuesta2"
                             android:text="Siguiente"
-                            android:textSize="30sp"
-                            android:textColor="@color/white"/>
+                            android:textColor="@color/white"
+                            android:textSize="30sp" />
                     </LinearLayout>
                 </LinearLayout>
 
