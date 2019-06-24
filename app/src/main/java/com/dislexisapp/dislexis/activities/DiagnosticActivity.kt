@@ -13,6 +13,7 @@ import com.dislexisapp.dislexis.R
 import com.dislexisapp.dislexis.viewModels.UserViewModel
 
 class DiagnosticActivity : AppCompatActivity(), PreguntaFragment.OnFragmentInteractionListener {
+    val limiteDeDesafios: Int =2
 
     var contadorPregunta: Int =0
     var contadorRespuestaCorrecta: Int =0
@@ -29,8 +30,10 @@ class DiagnosticActivity : AppCompatActivity(), PreguntaFragment.OnFragmentInter
         userViewModel.getPreguntas()
 
         userViewModel.preguntasList.observe(this, Observer {
+            it.shuffle()
+
             preguntasList.clear()
-            preguntasList.addAll(it)
+            preguntasList.addAll(it.subList(0, limiteDeDesafios))
             initMainFragment(contadorPregunta)
         })
     }

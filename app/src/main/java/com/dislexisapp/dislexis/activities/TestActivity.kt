@@ -1,5 +1,6 @@
 package com.dislexisapp.dislexis.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -14,6 +15,7 @@ import com.dislexisapp.dislexis.R
 import com.dislexisapp.dislexis.viewModels.UserViewModel
 
 class TestActivity : AppCompatActivity(), DesafioFragment.OnFragmentInteractionListener {
+    val limiteDePreguntas: Int =2
 
     var contadorRespuestasCorrectas: Int = 0
     var contadorDesafio: Int = 0
@@ -27,8 +29,10 @@ class TestActivity : AppCompatActivity(), DesafioFragment.OnFragmentInteractionL
         val userViewModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
         userViewModel.getDesafios()
         userViewModel.desafiosList.observe(this, Observer {
+            it.shuffle()
+
             desafioList.clear()
-            desafioList.addAll(it)
+            desafioList.addAll(it.subList(0 , limiteDePreguntas))
             initMainFragment(contadorDesafio)
         })
 
@@ -63,12 +67,7 @@ class TestActivity : AppCompatActivity(), DesafioFragment.OnFragmentInteractionL
                 Log.v("contador2", contadorDesafio.toString())
                 initMainFragment(contadorDesafio)
             } else {
-                Toast.makeText(
-                    this,
-                    "Test completado: " + contadorRespuestasCorrectas + " correctas",
-                    Toast.LENGTH_LONG
-                )
-                    .show()
+                startActivity(Intent(this, ScoreActivity::class.java).putExtra("score", contadorRespuestasCorrectas.toString()))
             }
         } else {
             Toast.makeText(
