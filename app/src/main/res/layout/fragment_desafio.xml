@@ -1,131 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <ImageView
-        android:id="@+id/iv_Reto"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:layout_margin="@dimen/regular_padding" />
-
-    <TextView
-        android:id="@+id/tv_answer"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="5dp"
-        android:background="@drawable/dynamic_test_answer"
-        android:gravity="center"
-        android:text="@string/txt_answer_initial"
-        android:textColor="#000"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
+    android:orientation="vertical"
+    android:background="@drawable/gradient"
+    android:gravity="center"
+    android:layout_height="match_parent">
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:layout_width="350dp"
+        android:layout_height="535dp"
+        android:background="#45000000"
+        tools:context="com.dislexisapp.dislexis.fragments.PreguntaFragment"
+        android:padding="5dp"
+        android:layout_gravity="center">
 
-        <ImageView
-            android:id="@+id/iv_question_result"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv_question_result"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
-            android:gravity="center"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_Reto"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/regular_padding" />
+
+                <TextView
+                    android:id="@+id/tv_answer"
+                    android:layout_width="300dp"
+                    android:layout_height="58dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/dynamic_test_answer"
+                    android:gravity="center"
+                    android:text="@string/txt_answer_initial"
+                    android:textColor="#000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_question_result"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:id="@+id/tv_question_result"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:gravity="center"
+                    android:layout_weight="4"
+                    android:layout_margin="@dimen/regular_padding"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/respuesta1"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/dynamic_test_option"
+                        android:padding="10dp"
+                        android:text="hola"
+                        android:textColor="#FFF"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/respuesta2"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/dynamic_test_option"
+                        android:padding="10dp"
+                        android:layout_margin="5dp"
+                        android:text="hola"
+                        android:textColor="#FFF"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/respuesta3"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/dynamic_test_option"
+                        android:padding="10dp"
+                        android:layout_margin="5dp"
+                        android:text="hola"
+                        android:textColor="#FFF"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/respuesta4"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/dynamic_test_option"
+                        android:padding="10dp"
+                        android:text="hola"
+                        android:textColor="#FFF"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:background="@color/green"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:id="@+id/btn_validate_answer"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp">
+
+
+                        <TextView
+                            android:id="@+id/tv_respuesta1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="Validar"
+                            android:textSize="30sp"
+                            android:textColor="@color/white"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/btn_dynamic_siguiente"
+                        android:background="#DD7171"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:clickable="true"
+                        android:layout_height="100dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tv_respuesta2"
+                            android:text="Siguiente"
+                            android:textSize="30sp"
+                            android:textColor="@color/white"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="@dimen/regular_padding"
-        android:orientation="horizontal">
-
-
-        <TextView
-            android:id="@+id/respuesta1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/dynamic_test_option"
-            android:padding="10dp"
-            android:text="hola"
-            android:textColor="#FFF"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/respuesta2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/dynamic_test_option"
-            android:padding="10dp"
-            android:text="hola"
-            android:textColor="#FFF"
-            android:textStyle="bold" />
-
-
-        <TextView
-            android:id="@+id/respuesta3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/dynamic_test_option"
-            android:padding="10dp"
-            android:text="hola"
-            android:textColor="#FFF"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/respuesta4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/dynamic_test_option"
-            android:padding="10dp"
-            android:text="hola"
-            android:textColor="#FFF"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btn_validate_answer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginEnd="@dimen/regular_padding"
-            android:layout_marginRight="@dimen/regular_padding"
-            android:text="Validar" />
-
-        <Button
-            android:id="@+id/btn_dynamic_siguiente"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/regular_padding"
-            android:layout_marginLeft="@dimen/regular_padding"
-            android:text="Siguiente" />
-    </LinearLayout>
-
 </LinearLayout>
