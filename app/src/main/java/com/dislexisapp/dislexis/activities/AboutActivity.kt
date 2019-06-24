@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.dislexisapp.dislexis.R
 import kotlinx.android.synthetic.main.activity_about.*
 
-class About : AppCompatActivity() {
+class AboutActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

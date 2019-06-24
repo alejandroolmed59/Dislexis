@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         android:background="@drawable/gradient"
         android:fitsSystemWindows="true"
-        tools:context="com.dislexisapp.dislexis.activities.About">
+        tools:context="com.dislexisapp.dislexis.activities.AboutActivity">
 
     <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/app_bar"

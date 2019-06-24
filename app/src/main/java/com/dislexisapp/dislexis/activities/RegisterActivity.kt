@@ -16,7 +16,8 @@ import com.dislexisapp.dislexis.R
 import com.dislexisapp.dislexis.viewModels.UserViewModel
 import kotlinx.android.synthetic.main.register.*
 
-class registerActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
+    
     lateinit var userViewModel: UserViewModel
     lateinit var loadingBar: ProgressDialog
 
@@ -52,8 +53,8 @@ class registerActivity : AppCompatActivity() {
             }
             if (isNetworkAvailable()) {
                 loadingBar = ProgressDialog(this)
-                loadingBar.setTitle("Please wait...")
-                loadingBar.setMessage("We are registering your data")
+                loadingBar.setTitle("Espere un momento...")
+                loadingBar.setMessage("Estamos registrando sus datos")
                 loadingBar.setCanceledOnTouchOutside(false)
                 loadingBar.show()
                 userViewModel.registerUser(

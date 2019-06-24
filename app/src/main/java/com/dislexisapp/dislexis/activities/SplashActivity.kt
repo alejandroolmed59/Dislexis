@@ -6,7 +6,7 @@ import android.os.Bundle
 import com.dislexisapp.dislexis.R
 import java.lang.Exception
 
-class splashActivity : AppCompatActivity() {
+class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

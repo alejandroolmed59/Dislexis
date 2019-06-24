@@ -7,7 +7,7 @@
         tools:showIn="@layout/activity_about"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.dislexisapp.dislexis.activities.About">
+        tools:context="com.dislexisapp.dislexis.activities.AboutActivity">
 
     <TextView
             android:layout_width="wrap_content"

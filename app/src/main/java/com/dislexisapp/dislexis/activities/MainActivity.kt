@@ -29,8 +29,8 @@ class MainActivity : AppCompatActivity() {
             if (isNetworkAvailable()) {
                 //Adding progress bar dialog for better UI experience
                 loadingBar = ProgressDialog(this)
-                loadingBar.setTitle("Please wait...")
-                loadingBar.setMessage("We are charging your data")
+                loadingBar.setTitle("Espere un momento...")
+                loadingBar.setMessage("Estamos cargando sus datos")
                 loadingBar.setCanceledOnTouchOutside(false)
                 loadingBar.show()
                 userViewModel.loginUser(
@@ -56,15 +56,15 @@ class MainActivity : AppCompatActivity() {
 
         }
         textViewRegister.setOnClickListener(){
-            startActivity(Intent(this, registerActivity::class.java)) }
+            startActivity(Intent(this, RegisterActivity::class.java)) }
         goToAboutUs.setOnClickListener(){
-            startActivity(Intent(this, About::class.java ))
+            startActivity(Intent(this, AboutActivity::class.java ))
         }
     }
     fun nuevaActivity(user: UserRetro){
             AppConstants.user= user
             loadingBar.dismiss()
-            startActivity(Intent(this, menuActivity::class.java))
+            startActivity(Intent(this, MenuActivity::class.java))
     }
 
     private fun isNetworkAvailable(): Boolean {

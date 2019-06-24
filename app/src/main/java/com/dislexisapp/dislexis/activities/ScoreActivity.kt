@@ -14,7 +14,7 @@ class ScoreActivity : AppCompatActivity() {
         val score = intent.getStringExtra("score")
         tv_score.text = score
         btGoMain.setOnClickListener {
-            startActivity(Intent(this, menuActivity::class.java))
+            startActivity(Intent(this, MenuActivity::class.java))
         }
     }
 }
