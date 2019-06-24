@@ -6,11 +6,8 @@ import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
-import android.view.DragEvent
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.dislexisapp.dislexis.network.Desafio
@@ -22,7 +19,7 @@ import kotlinx.android.synthetic.main.fragment_desafio.view.*
 private const val ARG_PARAM1 = "desafio"
 
 
-class DesafioFragment : Fragment(), View.OnDragListener, View.OnLongClickListener {
+class DesafioFragment : Fragment(), View.OnDragListener {
 
     private lateinit var desafio: Desafio
 
@@ -71,10 +68,10 @@ class DesafioFragment : Fragment(), View.OnDragListener, View.OnLongClickListene
         view.respuesta4.tag = desafio.respuesta4
 
 
-        view.respuesta1.setOnLongClickListener(this)
-        view.respuesta2.setOnLongClickListener(this)
-        view.respuesta3.setOnLongClickListener(this)
-        view.respuesta4.setOnLongClickListener(this)
+        view.respuesta1.setOnTouchListener(OnTouchItemListener())
+        view.respuesta2.setOnTouchListener(OnTouchItemListener())
+        view.respuesta3.setOnTouchListener(OnTouchItemListener())
+        view.respuesta4.setOnTouchListener(OnTouchItemListener())
 
         view.tv_answer.setOnDragListener(this)
 
@@ -106,12 +103,12 @@ class DesafioFragment : Fragment(), View.OnDragListener, View.OnLongClickListene
         }
     }
 
-    fun auxClickValidarRespuesta(respuesta: Boolean){
-        if(respuesta){
+    fun auxClickValidarRespuesta(respuesta: Boolean) {
+        if (respuesta) {
             tv_question_result.text = "Correcta"
             tv_question_result.setTextColor(Color.parseColor("#00A025"))
             iv_question_result.setImageDrawable(resources.getDrawable(R.drawable.ic_checked))
-        }else{
+        } else {
             tv_question_result.text = "Incorrecta"
             tv_question_result.setTextColor(Color.parseColor("#C91200"))
             iv_question_result.setImageDrawable(resources.getDrawable(R.drawable.ic_cancel))
@@ -168,23 +165,27 @@ class DesafioFragment : Fragment(), View.OnDragListener, View.OnLongClickListene
         return false
     }
 
-    override fun onLongClick(v: View): Boolean {
-        val item = ClipData.Item(v.tag as CharSequence)
+    private inner class OnTouchItemListener : View.OnTouchListener {
 
-        val mimeTypes = arrayOf(ClipDescription.MIMETYPE_TEXT_PLAIN)
-        val data = ClipData(v.tag.toString(), mimeTypes, item)
+        override fun onTouch(view: View, motionEvent: MotionEvent): Boolean {
+            if (motionEvent.action == MotionEvent.ACTION_DOWN) {
+                val item = ClipData.Item(view.tag as CharSequence)
 
-        val dragshadow = View.DragShadowBuilder(v)
+                val mimeTypes = arrayOf(ClipDescription.MIMETYPE_TEXT_PLAIN)
+                val data = ClipData(view.tag.toString(), mimeTypes, item)
 
-        v.startDrag(
-            data        // data to be dragged
-            , dragshadow   // drag shadow builder
-            , v           // local data about the drag and drop operation
-            , 0          // flags (not currently used, set to 0)
-        )
+                val dragshadow = View.DragShadowBuilder(view)
 
-        return true;
+                view.startDrag(
+                    data        // data to be dragged
+                    , dragshadow   // drag shadow builder
+                    , view           // local data about the drag and drop operation
+                    , 0          // flags (not currently used, set to 0)
+                )
+                return true
+            } else {
+                return false
+            }
+        }
     }
-
 }
-
