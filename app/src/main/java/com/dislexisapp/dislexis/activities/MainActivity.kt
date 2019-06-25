@@ -12,20 +12,21 @@ import androidx.lifecycle.ViewModelProviders
 import com.dislexisapp.dislexis.AppConstants
 import com.dislexisapp.dislexis.network.UserRetro
 import com.dislexisapp.dislexis.R
+import com.dislexisapp.dislexis.utils.SaveSharedPreference
 import com.dislexisapp.dislexis.viewModels.UserViewModel
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     lateinit var userViewModel: UserViewModel
-    lateinit var loadingBar : ProgressDialog
+    lateinit var loadingBar: ProgressDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         userViewModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
 
-        textViewLogin.setOnClickListener(){
+        textViewLogin.setOnClickListener() {
             if (isNetworkAvailable()) {
                 //Adding progress bar dialog for better UI experience
                 loadingBar = ProgressDialog(this)
@@ -36,35 +37,48 @@ class MainActivity : AppCompatActivity() {
                 userViewModel.loginUser(
                     editText.text.toString(),
                     editText2.text.toString(),
-                    {user: UserRetro-> nuevaActivity(user)})
+                    { user: UserRetro -> nuevaActivity(user) })
 
-                userViewModel.code.observe(this, Observer{code ->
-                    if(code == 500){
+                userViewModel.code.observe(this, Observer { code ->
+                    if (code == 500) {
                         loadingBar.dismiss()
-                        Snackbar.make(it,"Datos erroneos",Snackbar.LENGTH_LONG).show()
+                        Snackbar.make(it, "Datos erroneos", Snackbar.LENGTH_LONG).show()
                         //userViewModel.code.postValue(0)
                     }
                     userViewModel.code.postValue(0)
                 })
 
-            }else{
+            } else {
                 Snackbar.make(it, "No hay conexion a internet", Snackbar.LENGTH_LONG)
                     .setAction(
-                        "OK",{it.setOnClickListener { Log.v("ok", "ok") }}
+                        "OK", { it.setOnClickListener { Log.v("ok", "ok") } }
                     ).show()
             }
 
         }
-        textViewRegister.setOnClickListener(){
-            startActivity(Intent(this, RegisterActivity::class.java)) }
-        goToAboutUs.setOnClickListener(){
-            startActivity(Intent(this, AboutActivity::class.java ))
+        textViewRegister.setOnClickListener() {
+            val intent = Intent(this, RegisterActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
+            startActivity(intent)
+        }
+        goToAboutUs.setOnClickListener() {
+            val intent = Intent(this, AboutActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
+            startActivity(intent)
         }
     }
-    fun nuevaActivity(user: UserRetro){
-            AppConstants.user= user
-            loadingBar.dismiss()
-            startActivity(Intent(this, MenuActivity::class.java))
+
+    fun nuevaActivity(user: UserRetro) {
+        AppConstants.user = user
+        loadingBar.dismiss()
+        SaveSharedPreference.setLoggedIn(applicationContext, true)
+        val intent = Intent(this, MenuActivity::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivity(intent)
     }
 
     private fun isNetworkAvailable(): Boolean {

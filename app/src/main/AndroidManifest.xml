@@ -25,7 +25,7 @@
         <activity
             android:name=".activities.AboutActivity"
             android:label="@string/title_activity_about"
-            />
+            android:theme="@style/SplashTheme" />
         <activity android:name=".activities.ScoreActivity" />
         <activity
             android:name=".activities.RegisterActivity"
@@ -33,13 +33,13 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.MenuActivity"
-            android:label="@string/title_activity_menu"
-            />
+            android:label="@string/title_activity_menu" />
         <activity android:name=".activities.MainActivity"></activity>
         <activity android:name=".activities.DiagnosticActivity" />
         <activity android:name=".activities.TestActivity" />
-        <activity android:name=".activities.ProfileActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity
+            android:name=".activities.ProfileActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
     </application>
 
 </manifest>

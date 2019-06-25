@@ -27,7 +27,7 @@ class TestActivity : AppCompatActivity(), DesafioFragment.OnFragmentInteractionL
     val desafioList: MutableList<Desafio> = arrayListOf()
     val user = AppConstants.user
     private lateinit var mainFragment: DesafioFragment
-    lateinit var mTTS:TextToSpeech
+    lateinit var mTTS: TextToSpeech
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +35,7 @@ class TestActivity : AppCompatActivity(), DesafioFragment.OnFragmentInteractionL
         val userViewModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
 
         mTTS = TextToSpeech(applicationContext, TextToSpeech.OnInitListener { status ->
-            if (status != TextToSpeech.ERROR){
+            if (status != TextToSpeech.ERROR) {
                 //if there is no error then set language
                 mTTS.language = Locale.getDefault()
             }
@@ -53,7 +53,7 @@ class TestActivity : AppCompatActivity(), DesafioFragment.OnFragmentInteractionL
 
     fun initMainFragment(numDesafio: Int) {
 
-        mTTS.speak(desafioList[numDesafio].respuestaCorrecta ,TextToSpeech.QUEUE_FLUSH, null)
+        mTTS.speak(desafioList[numDesafio].respuestaCorrecta, TextToSpeech.QUEUE_FLUSH, null)
         mainFragment = DesafioFragment().newInstance(desafioList[numDesafio])
         val resource = R.id.main_fragment
         changeFragment(resource, mainFragment)
