@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="5dp"
-                android:text="Puntuació:"
+                android:text="Puntuación:"
                 android:textStyle="bold" />
 
             <TextView

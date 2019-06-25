@@ -6,18 +6,14 @@
     tools:context="com.dislexisapp.dislexis.fragments.PacienteFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
                 android:gravity="center"
                 android:background="@drawable/gradient"
                 android:orientation="vertical">
@@ -116,6 +112,30 @@
                     android:layout_height="1dp"
                     android:layout_marginTop="10dp"
                     android:background="@color/cardview_dark_background"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Su promedio es" />
+
+                    <TextView
+                        android:id="@+id/tv_promedio"
+                        android:layout_width="wrap_content"
+                        android:text="100"
+                        android:textStyle="bold"
+                        android:textSize="40dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sigue asi!!" />
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -125,31 +145,5 @@
                 android:layout_height="wrap_content">
 
             </androidx.recyclerview.widget.RecyclerView>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tu promedio es" />
-
-                <TextView
-                    android:id="@+id/tv_promedio"
-                    android:layout_width="wrap_content"
-                    android:text="100"
-                    android:textStyle="bold"
-                    android:textSize="40dp"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sigue asi!!" />
-            </LinearLayout>
         </LinearLayout>
-    </ScrollView>
 </LinearLayout>
