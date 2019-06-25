@@ -11,8 +11,6 @@ import com.dislexisapp.dislexis.R
 import kotlinx.android.synthetic.main.fragment_pregunta.view.*
 
 
-private const val ARG_PARAM1 = "ex"
-
 
 class PreguntaFragment : Fragment() {
     // TODO: Rename and change types of parameters
@@ -26,9 +24,16 @@ class PreguntaFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            pregunta = it.getParcelable(ARG_PARAM1)
+        if (savedInstanceState != null){
+            //Do whatever you need with the string here, like assign it to variable.
+            pregunta = savedInstanceState.getParcelable("pregunta")
         }
+    }
+
+    override fun onSaveInstanceState(savedInstanceState: Bundle) {
+        savedInstanceState.putParcelable("pregunta", pregunta)
+        //declare values before saving the state
+        super.onSaveInstanceState(savedInstanceState)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,

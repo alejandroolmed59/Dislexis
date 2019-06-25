@@ -14,15 +14,18 @@ import com.dislexisapp.dislexis.R
 import com.dislexisapp.dislexis.network.Paciente
 import kotlinx.android.synthetic.main.fragment_medico.view.*
 
-private const val ARG_PARAM1 = "pac"
-
-
-
 class MedicoFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var pacientes: List<Paciente> = emptyList()
     private var listener: Listener? = null
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        if (savedInstanceState != null){
+            //Do whatever you need with the string here, like assign it to variable.
+            pacientes = savedInstanceState.getParcelableArrayList("list")
+        }
+    }
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -66,5 +69,10 @@ class MedicoFragment : Fragment() {
             newFragment.pacientes = pacientes
             return newFragment
         }
+    }
+    override fun onSaveInstanceState(savedInstanceState: Bundle) {
+        savedInstanceState.putParcelableArrayList("list", ArrayList(pacientes))
+        //declare values before saving the state
+        super.onSaveInstanceState(savedInstanceState)
     }
 }
