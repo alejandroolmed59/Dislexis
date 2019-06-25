@@ -17,6 +17,7 @@ import android.speech.tts.TextToSpeech
 
 import android.speech.tts.TextToSpeech.OnInitListener;
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 class TestActivity : AppCompatActivity(), DesafioFragment.OnFragmentInteractionListener {
@@ -24,7 +25,7 @@ class TestActivity : AppCompatActivity(), DesafioFragment.OnFragmentInteractionL
 
     var contadorRespuestasCorrectas: Int = 0
     var contadorDesafio: Int = 0
-    val desafioList: MutableList<Desafio> = arrayListOf()
+    var desafioList: MutableList<Desafio> = arrayListOf()
     val user = AppConstants.user
     private lateinit var mainFragment: DesafioFragment
     lateinit var mTTS: TextToSpeech
@@ -40,15 +41,20 @@ class TestActivity : AppCompatActivity(), DesafioFragment.OnFragmentInteractionL
                 mTTS.language = Locale.getDefault()
             }
         })
-        userViewModel.getDesafios()
-        userViewModel.desafiosList.observe(this, Observer {
-            it.shuffle()
-
-            desafioList.clear()
-            desafioList.addAll(it.subList(0, limiteDePreguntas))
+        if (savedInstanceState != null){
+            desafioList = savedInstanceState.getParcelableArrayList("list")
+            contadorDesafio = savedInstanceState.getInt("contadorDesafio")
+            contadorRespuestasCorrectas = savedInstanceState.getInt("contadorRespuestasCorrectas")
             initMainFragment(contadorDesafio)
-        })
-
+        }else {
+            userViewModel.getDesafios()
+            userViewModel.desafiosList.observe(this, Observer {
+                it.shuffle()
+                desafioList.clear()
+                desafioList.addAll(it.subList(0, limiteDePreguntas))
+                initMainFragment(contadorDesafio)
+            })
+        }
     }
 
     fun initMainFragment(numDesafio: Int) {
@@ -95,5 +101,16 @@ class TestActivity : AppCompatActivity(), DesafioFragment.OnFragmentInteractionL
                 .show()
         }
     }
+    override fun onSaveInstanceState(savedInstanceState: Bundle) {
+        savedInstanceState.apply {
+            putParcelableArrayList("list", ArrayList(desafioList))
+            putInt("contadorDesafio", contadorDesafio)
+            putInt("contadorRespuestasCorrectas", contadorRespuestasCorrectas)
+        }
+
+        //declare values before saving the state
+        super.onSaveInstanceState(savedInstanceState)
+    }
+
 }
 
