@@ -18,7 +18,7 @@ class DiagnosticActivity : AppCompatActivity(), PreguntaFragment.OnFragmentInter
     var contadorPregunta: Int = 0
     var contadorRespuestaCorrecta: Int = 0
     lateinit var userViewModel: UserViewModel
-    val preguntasList: MutableList<Examen> = arrayListOf()
+    var preguntasList: MutableList<Examen> = arrayListOf()
     val user = AppConstants.user
     private lateinit var mainFragment: PreguntaFragment
 
@@ -27,15 +27,22 @@ class DiagnosticActivity : AppCompatActivity(), PreguntaFragment.OnFragmentInter
         setContentView(R.layout.activity_diagnostic)
 
         userViewModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
-        userViewModel.getPreguntas()
 
-        userViewModel.preguntasList.observe(this, Observer {
-            it.shuffle()
-
-            preguntasList.clear()
-            preguntasList.addAll(it.subList(0, limiteDeDesafios))
+        if(savedInstanceState!=null){
+            preguntasList = savedInstanceState.getParcelableArrayList("list")
+            contadorPregunta = savedInstanceState.getInt("contadorPregunta")
+            contadorRespuestaCorrecta = savedInstanceState.getInt("contadorRespuestaCorrecta")
             initMainFragment(contadorPregunta)
-        })
+        }else {
+            userViewModel.getPreguntas()
+            userViewModel.preguntasList.observe(this, Observer {
+                it.shuffle()
+
+                preguntasList.clear()
+                preguntasList.addAll(it.subList(0, limiteDeDesafios))
+                initMainFragment(contadorPregunta)
+            })
+        }
     }
 
     override fun clickSiguientePregunta(respuesta: String) {
@@ -63,5 +70,15 @@ class DiagnosticActivity : AppCompatActivity(), PreguntaFragment.OnFragmentInter
 
     private fun changeFragment(id: Int, frag: Fragment) {
         supportFragmentManager.beginTransaction().replace(id, frag).commit()
+    }
+    override fun onSaveInstanceState(savedInstanceState: Bundle) {
+        savedInstanceState.apply {
+            putParcelableArrayList("list", ArrayList(preguntasList))
+            putInt("contadorPregunta", contadorPregunta)
+            putInt("contadorRespuestaCorrecta", contadorRespuestaCorrecta)
+        }
+
+        //declare values before saving the state
+        super.onSaveInstanceState(savedInstanceState)
     }
 }
