@@ -126,7 +126,33 @@ data class Paciente (
 
     @field: Json(name="nombreCompleto")
     val nombreCompleto:String= "N/A"
-)
+):Parcelable {
+    constructor(parcel: Parcel) : this(
+            parcel.readString(),
+            parcel.readString(),
+            parcel.readString()) {
+    }
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(_id)
+        parcel.writeString(usernamePaciente)
+        parcel.writeString(nombreCompleto)
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<Paciente> {
+        override fun createFromParcel(parcel: Parcel): Paciente {
+            return Paciente(parcel)
+        }
+
+        override fun newArray(size: Int): Array<Paciente?> {
+            return arrayOfNulls(size)
+        }
+    }
+}
 
 data class Desafio (
         @field: Json(name="img")

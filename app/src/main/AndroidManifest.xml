@@ -38,7 +38,8 @@
         <activity android:name=".activities.MainActivity"></activity>
         <activity android:name=".activities.DiagnosticActivity" />
         <activity android:name=".activities.TestActivity" />
-        <activity android:name=".activities.ProfileActivity"></activity>
+        <activity android:name=".activities.ProfileActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
     </application>
 
 </manifest>

@@ -16,7 +16,6 @@ import kotlinx.android.synthetic.main.fragment_desafio.*
 import kotlinx.android.synthetic.main.fragment_desafio.view.*
 
 
-private const val ARG_PARAM1 = "desafio"
 
 
 class DesafioFragment : Fragment(), View.OnDragListener {
@@ -35,8 +34,9 @@ class DesafioFragment : Fragment(), View.OnDragListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            desafio = it.getParcelable(ARG_PARAM1)
+        if (savedInstanceState != null){
+            //Do whatever you need with the string here, like assign it to variable.
+            desafio = savedInstanceState.getParcelable("desafio")
         }
     }
 
@@ -187,5 +187,10 @@ class DesafioFragment : Fragment(), View.OnDragListener {
                 return false
             }
         }
+    }
+    override fun onSaveInstanceState(savedInstanceState: Bundle) {
+        savedInstanceState.putParcelable("desafio", desafio)
+        //declare values before saving the state
+        super.onSaveInstanceState(savedInstanceState)
     }
 }
