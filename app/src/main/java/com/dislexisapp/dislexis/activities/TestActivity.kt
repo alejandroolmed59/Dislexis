@@ -13,6 +13,11 @@ import com.dislexisapp.dislexis.fragments.DesafioFragment
 import com.dislexisapp.dislexis.network.Desafio
 import com.dislexisapp.dislexis.R
 import com.dislexisapp.dislexis.viewModels.UserViewModel
+import android.speech.tts.TextToSpeech
+
+import android.speech.tts.TextToSpeech.OnInitListener;
+import java.util.*
+
 
 class TestActivity : AppCompatActivity(), DesafioFragment.OnFragmentInteractionListener {
     val limiteDePreguntas: Int = 2
@@ -22,11 +27,19 @@ class TestActivity : AppCompatActivity(), DesafioFragment.OnFragmentInteractionL
     val desafioList: MutableList<Desafio> = arrayListOf()
     val user = AppConstants.user
     private lateinit var mainFragment: DesafioFragment
+    lateinit var mTTS:TextToSpeech
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test)
         val userViewModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
+
+        mTTS = TextToSpeech(applicationContext, TextToSpeech.OnInitListener { status ->
+            if (status != TextToSpeech.ERROR){
+                //if there is no error then set language
+                mTTS.language = Locale.getDefault()
+            }
+        })
         userViewModel.getDesafios()
         userViewModel.desafiosList.observe(this, Observer {
             it.shuffle()
@@ -39,6 +52,8 @@ class TestActivity : AppCompatActivity(), DesafioFragment.OnFragmentInteractionL
     }
 
     fun initMainFragment(numDesafio: Int) {
+
+        mTTS.speak(desafioList[numDesafio].respuestaCorrecta ,TextToSpeech.QUEUE_FLUSH, null)
         mainFragment = DesafioFragment().newInstance(desafioList[numDesafio])
         val resource = R.id.main_fragment
         changeFragment(resource, mainFragment)
