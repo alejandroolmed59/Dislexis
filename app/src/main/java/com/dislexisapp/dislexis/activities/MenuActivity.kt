@@ -8,6 +8,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity;
 import com.dislexisapp.dislexis.R
+import com.dislexisapp.dislexis.utils.SaveSharedPreference
 import kotlinx.android.synthetic.main.content_menu.*
 
 
@@ -44,8 +45,15 @@ class MenuActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.action_logout ->{
-                System.exit(0)
+            R.id.action_logout -> {
+                SaveSharedPreference.setLoggedIn(applicationContext, false)
+                val intent = Intent(applicationContext, MainActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
+                finish()
+                //System.exit(0)
                 return true
             }
             else -> super.onOptionsItemSelected(item)

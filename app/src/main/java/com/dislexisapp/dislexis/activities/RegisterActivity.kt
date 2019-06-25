@@ -17,7 +17,7 @@ import com.dislexisapp.dislexis.viewModels.UserViewModel
 import kotlinx.android.synthetic.main.register.*
 
 class RegisterActivity : AppCompatActivity() {
-    
+
     lateinit var userViewModel: UserViewModel
     lateinit var loadingBar: ProgressDialog
 
@@ -26,8 +26,8 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(R.layout.register)
 
         Glide.with(this)
-                .load(R.drawable.ic_register)
-                .into(registerImage)
+            .load(R.drawable.ic_register)
+            .into(registerImage)
 
         userViewModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
         rb_isPaciente.setOnClickListener() {
@@ -37,7 +37,9 @@ class RegisterActivity : AppCompatActivity() {
 
         }
         go_to_login.setOnClickListener() {
-            startActivity(Intent(this, MainActivity::class.java))
+            val intent = Intent(this, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(intent)
         }
 
         if (rb_isPaciente.isChecked) {
@@ -58,15 +60,15 @@ class RegisterActivity : AppCompatActivity() {
                 loadingBar.setCanceledOnTouchOutside(false)
                 loadingBar.show()
                 userViewModel.registerUser(
-                        userAuthorization(
-                                username.text.toString(),
-                                tv_nombreCompleto.text.toString(),
-                                email.text.toString(),
-                                password.text.toString(),
-                                flag,
-                                medicoReferencia.text.toString()
-                        ),
-                        { callback: Boolean -> respuesta(callback) })
+                    userAuthorization(
+                        username.text.toString(),
+                        tv_nombreCompleto.text.toString(),
+                        email.text.toString(),
+                        password.text.toString(),
+                        flag,
+                        medicoReferencia.text.toString()
+                    ),
+                    { callback: Boolean -> respuesta(callback) })
                 userViewModel.code.observe(this, Observer { code ->
                     if (code == 500) {
                         loadingBar.dismiss()
@@ -78,9 +80,9 @@ class RegisterActivity : AppCompatActivity() {
 
             } else {
                 Snackbar.make(it, "No hay conexion a internet", Snackbar.LENGTH_LONG)
-                        .setAction(
-                                "OK", { it.setOnClickListener { Log.v("ok", "ok") } }
-                        ).show()
+                    .setAction(
+                        "OK", { it.setOnClickListener { Log.v("ok", "ok") } }
+                    ).show()
             }
         }
 
