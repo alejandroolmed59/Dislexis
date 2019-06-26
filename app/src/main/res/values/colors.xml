@@ -15,13 +15,13 @@
     <color name="bluelight">#49acd5</color>
     <color name="green">#45bc62</color>
     <color name="grey">#E5E5E5</color>
-    <color name="primaryColor">#90caf9</color>
-    <color name="primaryLightColor">#c3fdff</color>
-    <color name="primaryDarkColor">#5d99c6</color>
-    <color name="secondaryColor">#40c4ff</color>
-    <color name="secondaryLightColor">#82f7ff</color>
-    <color name="secondaryDarkColor">#0094cc</color>
-    <color name="primaryTextColor">#e1f5fe</color>
-    <color name="secondaryTextColor">#212121</color>
-    <color name="text_btn_color">#55A6C4</color>
+
+    <color name="primaryColor">#66bb6a</color>
+    <color name="primaryLightColor">#98ee99</color>
+    <color name="primaryDarkColor">#338a3e</color>
+    <color name="secondaryColor">#81c784</color>
+    <color name="secondaryLightColor">#b2fab4</color>
+    <color name="secondaryDarkColor">#519657</color>
+    <color name="primaryTextColor">#000000</color>
+    <color name="secondaryTextColor">#000000</color>
 </resources>

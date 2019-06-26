@@ -1,134 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:context="com.dislexisapp.dislexis.activities.MainActivity"
->
-
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    android:orientation="vertical"
+    android:scrollbarAlwaysDrawVerticalTrack="true">
     <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/f"
-            android:scaleType="centerCrop"
-    />
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:background="@drawable/gradient"
-            android:gravity="center"
-            android:layout_height="match_parent">
-        <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="120dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="50dp"
-                app:srcCompat="@drawable/ic_logo_nice"/>
+        android:id="@+id/login_title"
+        android:layout_width="109dp"
+        android:layout_height="124dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginBottom="16dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_logo_nice" />
 
-
-        <EditText
-                android:textStyle="bold"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_action_user"
-                android:id="@+id/editText"
-                android:hint="Username"
-                android:inputType="text"
-                android:layout_marginBottom="15dp"
-                android:textColor="#fff"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/input"
-                android:paddingLeft="20dp"
-                android:paddingRight="10dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:textColorHint="#ccc"/>
-
-
-
-        <EditText
-                android:textStyle="bold"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/editText2"
-                android:drawableLeft="@drawable/ic_action_pass"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:layout_marginBottom="15dp"
-                android:textColor="#fff"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/input"
-                android:paddingLeft="20dp"
-                android:paddingRight="10dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:textColorHint="#ccc"/>
-
-
-        <Button
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:layout_marginTop="20dp"
-                android:id="@+id/textViewLogin"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/btn_fondo_color"
-                android:text="Log in"
-                android:textColor="@color/text_btn_color"
-                android:textSize="16sp"
-                android:elevation="5dp"/>
-
-
+    <RelativeLayout
+        android:layout_width="354dp"
+        android:layout_height="390dp"
+        android:layout_below="@+id/login_title"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="30dp"
+        android:background="#fff"
+        android:elevation="10dp"
+        android:orientation="vertical"
+        android:padding="20dp">
 
         <LinearLayout
+            android:layout_width="331dp"
+            android:layout_height="360dp"
+            android:orientation="vertical"
+            android:paddingTop="30dp">
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:gravity="center"
                 android:layout_height="wrap_content">
 
-            <TextView
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_action_user"
+                    android:drawableTint="#FF4081"
+                    android:hint="User Name"
+                    android:id="@+id/editText"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:drawableLeft="@drawable/ic_action_pass"
+                    android:drawableTint="#FF4081"
+                    android:hint="Password"
+                    android:id="@+id/editText2"
+                    android:singleLine="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="22dp"
+                android:background="@drawable/btn_fondo_color2"
+                android:text="Sign in"
+                android:id="@+id/textViewLogin"
+                android:textAllCaps="false"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="¿No tienes cuenta?"
-                    android:textSize="16sp"
-                    android:textColor="#fff"
-            />
-            <Button
+                    android:textColor="@color/cardview_dark_background"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/textViewRegister"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Registrate"
-                    android:id="@+id/textViewRegister"
-                    android:background="@android:color/transparent"
                     android:layout_marginLeft="10dp"
-                    android:textColor="#fff"/>
+                    android:background="@android:color/transparent"
+                    android:text="Registrate"
+                    android:textColor="@color/primaryTextColor" />
+            </LinearLayout>
 
-        </LinearLayout>
-        <LinearLayout
+            <LinearLayout
+                android:id="@+id/ly_about"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/ly_about"
                 android:gravity="center">
-            <TextView
+
+                <TextView
                     android:id="@+id/goToAboutUs"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="About us"
-                    android:textSize="16sp"
-                    android:textColor="#fff"
-            />
-
-
+                    android:layout_marginTop="10dp"
+                    android:text="Indicaciones"
+                    android:textColor="@color/primaryTextColor"
+                    android:textSize="16sp" />
+            </LinearLayout>
         </LinearLayout>
-
-
-    </LinearLayout>
-
+    </RelativeLayout>
 </RelativeLayout>

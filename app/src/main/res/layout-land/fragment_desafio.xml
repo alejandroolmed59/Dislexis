@@ -9,21 +9,21 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="618dp"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:background="#45000000"
+        android:background="#88FFFFFF"
         android:orientation="vertical"
         android:padding="5dp"
         tools:context="com.dislexisapp.dislexis.fragments.PreguntaFragment">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:orientation="horizontal">
@@ -34,13 +34,28 @@
                     android:gravity="center"
                     android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/iv_Reto"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_gravity="center"
-                        android:layout_margin="@dimen/regular_padding" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
 
+                        <ImageView
+                            android:id="@+id/iv_Reto"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="95dp"
+                            android:baselineAligned="false" />
+
+                        <Button
+                            android:id="@+id/repetir"
+                            android:layout_width="48dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="25dp"
+                            android:background="@drawable/ic_play_circle_outline_black_24dp" />
+                    </LinearLayout>
                     <TextView
                         android:id="@+id/tv_answer"
                         android:layout_width="300dp"
@@ -163,7 +178,8 @@
 
                     <LinearLayout
                         android:id="@+id/btn_dynamic_siguiente"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
+                        android:textAlignment="center"
                         android:layout_height="100dp"
                         android:background="#DD7171"
                         android:clickable="true"
@@ -174,6 +190,7 @@
                             android:id="@+id/tv_respuesta2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:textAlignment="center"
                             android:text="Siguiente"
                             android:textColor="@color/white"
                             android:textSize="30sp" />

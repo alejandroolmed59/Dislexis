@@ -22,7 +22,7 @@
                 android:layout_marginTop="25dp"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:background="#45000000"
+                android:background="#88FFFFFF"
                 android:orientation="vertical"
                 android:padding="5dp"
                 tools:context="com.dislexisapp.dislexis.fragments.PreguntaFragment">
