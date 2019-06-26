@@ -6,9 +6,8 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.dislexisapp.dislexis.AppConstants
+import com.dislexisapp.dislexis.utils.AppConstants
 import com.dislexisapp.dislexis.R
-import com.dislexisapp.dislexis.fragments.DesafioFragment
 import com.dislexisapp.dislexis.fragments.MedicoFragment
 import com.dislexisapp.dislexis.fragments.PacienteFragment
 import com.dislexisapp.dislexis.network.Paciente

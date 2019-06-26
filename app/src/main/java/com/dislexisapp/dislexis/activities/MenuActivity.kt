@@ -47,6 +47,8 @@ class MenuActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.action_logout -> {
                 SaveSharedPreference.setLoggedIn(applicationContext, false)
+                SaveSharedPreference.setUsername(applicationContext,"")
+                SaveSharedPreference.setPassword(applicationContext,"")
                 val intent = Intent(applicationContext, MainActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
@@ -59,20 +61,4 @@ class MenuActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-/*
-    override fun onBackPressed() {
-        val builder = AlertDialog.Builder(application)
-        builder.setMessage("¿Seguro de cerrar sesion?")
-        builder.setCancelable(true)
-        builder.setNegativeButton("No") { dialog, _ ->
-            dialog.cancel()
-        }
-
-        builder.setPositiveButton("Exit") { _, _ ->
-            finish()
-        }
-        val alertDialog = builder.create()
-        alertDialog.show()
-    } TODO lo meti cuando presionara el de cerrar sesion pero se muere XD*/
-
 }

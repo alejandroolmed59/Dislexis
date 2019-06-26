@@ -3,7 +3,9 @@ package com.dislexisapp.dislexis.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.dislexisapp.dislexis.R
+import com.dislexisapp.dislexis.utils.AppConstants
 import com.dislexisapp.dislexis.utils.SaveSharedPreference
 import java.lang.Exception
 
@@ -18,9 +20,8 @@ class SplashActivity : AppCompatActivity() {
                 try {
                     Thread.sleep(1500)
                     lateinit var intent: Intent
-                    if (SaveSharedPreference.getLoggedStatus(applicationContext)) {
+                    if (SaveSharedPreference.getLoggedStatus(applicationContext) && AppConstants.user != null) {
                         intent = Intent(applicationContext, MenuActivity::class.java)
-                        startActivity(intent)
                     } else {
                         intent = Intent(baseContext, MainActivity::class.java)
                     }

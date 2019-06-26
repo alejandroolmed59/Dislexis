@@ -5,6 +5,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
     android:orientation="vertical"
+    android:id="@+id/rl_login"
+    android:visibility="invisible"
     android:scrollbarAlwaysDrawVerticalTrack="true">
 
     <ScrollView
