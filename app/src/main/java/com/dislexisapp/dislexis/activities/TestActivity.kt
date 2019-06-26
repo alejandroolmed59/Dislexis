@@ -20,7 +20,8 @@ import kotlin.collections.ArrayList
 
 
 class TestActivity : AppCompatActivity(), DesafioFragment.OnFragmentInteractionListener {
-    val limiteDePreguntas: Int = 2
+
+    val limiteDePreguntas: Int = 20
 
     var contadorRespuestasCorrectas: Int = 0
     var contadorDesafio: Int = 0
@@ -55,6 +56,11 @@ class TestActivity : AppCompatActivity(), DesafioFragment.OnFragmentInteractionL
             })
         }
     }
+
+    override fun repetirRespuesta() {
+        mTTS.speak(desafioList[contadorDesafio].respuestaCorrecta, TextToSpeech.QUEUE_FLUSH, null)
+    }
+
 
     fun initMainFragment(numDesafio: Int) {
 
