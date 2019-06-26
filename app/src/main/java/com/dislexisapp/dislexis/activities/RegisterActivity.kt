@@ -5,7 +5,11 @@ import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
+import android.util.Patterns
+import android.widget.EditText
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer
@@ -15,6 +19,7 @@ import com.dislexisapp.dislexis.database.entities.DTO.userAuthorization
 import com.dislexisapp.dislexis.R
 import com.dislexisapp.dislexis.viewModels.UserViewModel
 import kotlinx.android.synthetic.main.register.*
+import java.util.regex.Pattern
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -24,10 +29,6 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.register)
-
-        Glide.with(this)
-            .load(R.drawable.ic_register)
-            .into(registerImage)
 
         userViewModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
         rb_isPaciente.setOnClickListener() {
@@ -41,6 +42,8 @@ class RegisterActivity : AppCompatActivity() {
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
         }
+        email.validate({ s -> s.isValidEmail() },
+            "Se requiere un email valido")
 
         if (rb_isPaciente.isChecked) {
             medicoReferencia.isEnabled = true
@@ -54,6 +57,10 @@ class RegisterActivity : AppCompatActivity() {
                 "false"
             }
             if (isNetworkAvailable()) {
+                var emailA : EditText = findViewById(R.id.email)
+
+
+
                 loadingBar = ProgressDialog(this)
                 loadingBar.setTitle("Espere un momento...")
                 loadingBar.setMessage("Estamos registrando sus datos")
@@ -103,5 +110,26 @@ class RegisterActivity : AppCompatActivity() {
         return activeNetworkInfo != null && activeNetworkInfo.isConnected
     }
 
+    fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
+        this.addTextChangedListener(object: TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                afterTextChanged.invoke(s.toString())
+            }
 
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) { }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) { }
+        })
+    }
+
+    fun EditText.validate(validator: (String) -> Boolean, message: String) {
+        this.afterTextChanged {
+            this.error = if (validator(it)) null else message
+        }
+        this.error = if (validator(this.text.toString())) null else message
+    }
+
+    fun String.isValidEmail(): Boolean
+            = this.isNotEmpty() &&
+            Patterns.EMAIL_ADDRESS.matcher(this).matches()
 }

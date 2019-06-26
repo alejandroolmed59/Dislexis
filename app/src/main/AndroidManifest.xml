@@ -30,16 +30,22 @@
         <activity
             android:name=".activities.RegisterActivity"
             android:label="@string/title_activity_register"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateVisible|adjustResize"/>
         <activity
             android:name=".activities.MenuActivity"
             android:label="@string/title_activity_menu" />
-        <activity android:name=".activities.MainActivity"></activity>
+        <activity android:name=".activities.MainActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            >
+
+        </activity>
         <activity android:name=".activities.DiagnosticActivity" />
         <activity android:name=".activities.TestActivity" />
         <activity
             android:name=".activities.ProfileActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
     </application>
 
 </manifest>
