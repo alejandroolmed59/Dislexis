@@ -11,44 +11,40 @@
     android:scrollbarAlwaysDrawVerticalTrack="true"
     tools:context="com.dislexisapp.dislexis.activities.MainActivity">
 
-    <ImageView
-        android:id="@+id/login_title"
-        android:layout_width="109dp"
-        android:layout_height="124dp"
-        android:layout_marginTop="22dp"
-        android:layout_marginBottom="16dp"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/ic_logo_nice" />
 
     <RelativeLayout
-        android:layout_width="354dp"
-        android:layout_height="390dp"
-        android:layout_below="@+id/login_title"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginRight="30dp"
+        android:layout_width="366dp"
+        android:layout_height="484dp"
+        android:layout_centerInParent="true"
         android:background="#fff"
         android:elevation="10dp"
         android:orientation="vertical"
         android:padding="20dp">
 
         <LinearLayout
-            android:layout_width="331dp"
-            android:layout_height="360dp"
+            android:layout_width="327dp"
+            android:layout_height="442dp"
             android:orientation="vertical"
             android:paddingTop="30dp">
+
+            <ImageView
+                android:id="@+id/login_title"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_logo_nice" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <EditText
+                    android:id="@+id/editText"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@drawable/ic_action_user"
                     android:drawableTint="#FF4081"
                     android:hint="User Name"
-                    android:id="@+id/editText"
                     android:singleLine="true" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -57,22 +53,24 @@
                 android:layout_height="wrap_content">
 
                 <EditText
+                    android:id="@+id/editText2"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:drawableLeft="@drawable/ic_action_pass"
                     android:drawableTint="#FF4081"
+                    android:inputType="textPassword"
                     android:hint="Password"
-                    android:id="@+id/editText2"
                     android:singleLine="true" />
             </com.google.android.material.textfield.TextInputLayout>
+
             <Button
+                android:id="@+id/textViewLogin"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="22dp"
                 android:background="@drawable/btn_fondo_color2"
                 android:text="Sign in"
-                android:id="@+id/textViewLogin"
                 android:textAllCaps="false"
                 android:textColor="@color/primaryTextColor"
                 android:textSize="18sp" />
@@ -82,6 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -105,7 +104,7 @@
             <LinearLayout
                 android:id="@+id/ly_about"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="51dp"
                 android:gravity="center">
 
                 <TextView
