@@ -12,7 +12,7 @@ android {
         applicationId "com.dislexisapp.dislexis"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 1
+        versionCode 2
         versionName "1.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
