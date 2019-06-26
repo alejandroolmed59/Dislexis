@@ -13,7 +13,7 @@ import com.dislexisapp.dislexis.R
 import com.dislexisapp.dislexis.viewModels.UserViewModel
 
 class DiagnosticActivity : AppCompatActivity(), PreguntaFragment.OnFragmentInteractionListener {
-    val limiteDeDesafios: Int = 2
+    val limiteDeDesafios =  AppConstants.limiteDeDesafios
 
     var contadorPregunta: Int = 0
     var contadorRespuestaCorrecta: Int = 0
@@ -54,8 +54,10 @@ class DiagnosticActivity : AppCompatActivity(), PreguntaFragment.OnFragmentInter
                 userViewModel.subirExamen(user.username!!, contadorRespuestaCorrecta)
                 val intent =
                     Intent(this, ScoreActivity::class.java).putExtra("score", contadorRespuestaCorrecta.toString())
+                intent.putExtra("limite", limiteDeDesafios.toString())
                 intent.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS)
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
+
                 startActivity(intent)
             }
         }

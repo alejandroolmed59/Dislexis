@@ -95,6 +95,7 @@ class TestActivity : AppCompatActivity(), DesafioFragment.OnFragmentInteractionL
                     Intent(this, ScoreActivity::class.java).putExtra("score", contadorRespuestasCorrectas.toString())
                 intent.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS)
                 intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
+                intent.putExtra("limite", limiteDePreguntas.toString())
                 startActivity(intent)
             }
         } else {

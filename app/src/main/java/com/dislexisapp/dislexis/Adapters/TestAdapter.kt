@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dislexisapp.dislexis.R
 
 import com.dislexisapp.dislexis.network.ExamenRetro
+import com.dislexisapp.dislexis.utils.AppConstants
 import kotlinx.android.synthetic.main.cardview_test.view.*
 
 
@@ -31,7 +32,20 @@ class TestAdapter internal  constructor() : RecyclerView.Adapter<TestAdapter.Vie
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(examen: ExamenRetro) = with(itemView) {
-            puntuacion.text = examen.correctas
+            if(AppConstants.rolOriginal== "PacienteDef") {
+                val total: Double = (examen.correctas.toFloat() / AppConstants.limiteDeDesafios.toFloat()).toDouble()
+                var cadena = when (total) {
+                    in 0.0..0.099 -> "Puedes hacerlo mucho mejor!!"
+                    in 0.1..0.4 -> "Puedes hacerlo mejor!"
+                    in 0.41..0.7 -> "Vamos mejorando"
+                    in 0.71..0.99 -> "Vamos muy bien!"
+                    1.0 -> "Lo hiciste excelente!!"
+                    else -> "Def"
+                }
+                puntuacion.text = cadena
+            }else {
+                puntuacion.text = examen.correctas
+            }
         }
     }
 }

@@ -12,6 +12,7 @@ import com.dislexisapp.dislexis.Adapters.TestAdapter
 
 import com.dislexisapp.dislexis.R
 import com.dislexisapp.dislexis.network.UserRetro
+import com.dislexisapp.dislexis.utils.AppConstants
 import kotlinx.android.synthetic.main.fragment_paciente.view.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -45,15 +46,30 @@ class PacienteFragment : Fragment() {
         view.email.text = user.email
         view.medicoRef.text = user.medicoReferencia
 
-        if(user.examenes!!.size!=0) {
+        if(user.examenes!!.size!=0 ) {
             var cont: Int = 0
             for (examen in user.examenes!!) {
                 cont += examen.correctas!!.toInt()
             }
-            view.tv_promedio.text = ((cont.toFloat() / user.examenes!!.size.toFloat()).toString())
+            val promedio =  (cont.toDouble() / AppConstants.limiteDeDesafios.toDouble())/user.examenes!!.size.toDouble()
+            if(AppConstants.rolOriginal== "PacienteDef") {
+                var cadena = when (promedio) {
+                    in 0.0..0.099 -> "Puedes hacerlo mucho mejor!!"
+                    in 0.1..0.4 -> "Puedes hacerlo mejor!"
+                    in 0.41..0.7 -> "Vamos mejorando"
+                    in 0.71..0.99 -> "Vamos muy bien!"
+                    1.0 -> "Lo hiciste excelente!!"
+                    else -> "Def"
+                }
+                view.tv_promedio.text = cadena
+            }else{
+                view.tv_promedio.text= (promedio).toString()
+            }
+
         }else{
             view.tv_promedio.text= "0"
         }
+
         return view
     }
 

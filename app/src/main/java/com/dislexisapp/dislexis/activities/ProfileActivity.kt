@@ -26,9 +26,14 @@ class ProfileActivity : AppCompatActivity(), PacienteFragment.OnFragmentInteract
     }
 
     var user = AppConstants.user
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
+        if(user!!.isPaciente=="false"){
+            AppConstants.rolOriginal = "MedicoDef"
+        }else{ AppConstants.rolOriginal = "PacienteDef"}
+
         userViewModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
         userViewModel.getUser(user!!.username)
         userViewModel.userLD.observe(this, Observer {
