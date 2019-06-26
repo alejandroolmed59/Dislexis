@@ -17,8 +17,16 @@
             android:textAlignment="center"
             android:layout_margin="@dimen/text_margin"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:textSize="40dp"
             android:text="Uso de la aplicacion"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Se recomienda que al momento de iniciar sesion sea un adulto quien maneja la cuenta"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -36,7 +44,7 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
-            android:background="@color/primaryDarkColor"
+            android:background="@color/primaryColor"
             android:src="@drawable/diagnostic_screen"
             />
         <TextView
@@ -51,7 +59,7 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
-            android:background="@color/primaryDarkColor"
+            android:background="@color/primaryColor"
             android:src="@drawable/test_screen"
             />
 
@@ -66,7 +74,7 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
-            android:background="@color/primaryDarkColor"
+            android:background="@color/primaryColor"
             android:src="@drawable/paciente_screen"
             />
 
