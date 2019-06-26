@@ -61,6 +61,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
+                        android:inputType="textPassword"
                         android:drawableLeft="@drawable/ic_action_pass"
                         android:drawableTint="#FF4081"
                         android:hint="Password"

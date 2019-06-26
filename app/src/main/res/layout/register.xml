@@ -87,6 +87,7 @@
                     android:drawableLeft="@drawable/ic_action_pass"
                     android:drawableTint="#294AD6"
                     android:hint="Contraseña"
+                    android:inputType="textPassword"
                     android:singleLine="true" />
             </com.google.android.material.textfield.TextInputLayout>
 
