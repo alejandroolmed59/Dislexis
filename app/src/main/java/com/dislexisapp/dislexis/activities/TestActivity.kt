@@ -8,14 +8,13 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.dislexisapp.dislexis.AppConstants
+import com.dislexisapp.dislexis.utils.AppConstants
 import com.dislexisapp.dislexis.fragments.DesafioFragment
 import com.dislexisapp.dislexis.network.Desafio
 import com.dislexisapp.dislexis.R
 import com.dislexisapp.dislexis.viewModels.UserViewModel
 import android.speech.tts.TextToSpeech
 
-import android.speech.tts.TextToSpeech.OnInitListener;
 import java.util.*
 import kotlin.collections.ArrayList
 

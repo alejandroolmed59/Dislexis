@@ -7,11 +7,15 @@ import android.net.ConnectivityManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.dislexisapp.dislexis.AppConstants
+import com.dislexisapp.dislexis.utils.AppConstants
 import com.dislexisapp.dislexis.network.UserRetro
 import com.dislexisapp.dislexis.R
+import com.dislexisapp.dislexis.utils.AppConstants.PASSWORD_PREF
+import com.dislexisapp.dislexis.utils.AppConstants.USER_PREF
 import com.dislexisapp.dislexis.utils.SaveSharedPreference
 import com.dislexisapp.dislexis.viewModels.UserViewModel
 import com.google.android.material.snackbar.Snackbar
@@ -26,6 +30,29 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         userViewModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
 
+        if (!SaveSharedPreference.getLoggedStatus(applicationContext)) {
+            rl_login.visibility = View.VISIBLE
+        }
+
+        if (SaveSharedPreference.getLoggedStatus(applicationContext) && AppConstants.user == null) {
+            if (isNetworkAvailable()) {
+                loadingBar = ProgressDialog(this)
+                loadingBar.setTitle("Espere un momento...")
+                loadingBar.setMessage("Estamos cargando sus datos")
+                loadingBar.setCanceledOnTouchOutside(false)
+                loadingBar.show()
+
+                val user = SaveSharedPreference.getUsername(this)
+                val pass = SaveSharedPreference.getPassword(this)
+                userViewModel.loginUser(
+                    user!!,
+                    pass!!,
+                    { user: UserRetro -> nuevaActivity(user) })
+            } else {
+                Toast.makeText(this, "No hay conexion a internet", Toast.LENGTH_LONG).show()
+            }
+        }
+
         textViewLogin.setOnClickListener() {
             if (isNetworkAvailable()) {
                 //Adding progress bar dialog for better UI experience
@@ -34,10 +61,13 @@ class MainActivity : AppCompatActivity() {
                 loadingBar.setMessage("Estamos cargando sus datos")
                 loadingBar.setCanceledOnTouchOutside(false)
                 loadingBar.show()
+                SaveSharedPreference.setUsername(applicationContext, editText.text.toString())
+                SaveSharedPreference.setPassword(applicationContext, editText2.text.toString())
                 userViewModel.loginUser(
                     editText.text.toString(),
                     editText2.text.toString(),
                     { user: UserRetro -> nuevaActivity(user) })
+
 
                 userViewModel.code.observe(this, Observer { code ->
                     if (code == 500) {
