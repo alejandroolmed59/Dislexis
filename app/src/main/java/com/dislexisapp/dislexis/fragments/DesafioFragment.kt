@@ -43,6 +43,7 @@ class DesafioFragment : Fragment(), View.OnDragListener {
     interface OnFragmentInteractionListener {
         fun clickSiguienteDesafio(respuesta: String)
         fun clickValidarRespuesta(respuesta: String)
+        fun repetirRespuesta()
     }
 
 
@@ -80,7 +81,13 @@ class DesafioFragment : Fragment(), View.OnDragListener {
         view.respuesta3.setOnDragListener(this)
         view.respuesta4.setOnDragListener(this)
 
+        view.iv_Reto.setOnClickListener {
+            listener?.repetirRespuesta()
+        }
 
+        view.repetir.setOnClickListener {
+            listener?.repetirRespuesta()
+        }
 
         view.btn_validate_answer.setOnClickListener {
             listener?.clickValidarRespuesta(view.tv_answer.text.toString())
