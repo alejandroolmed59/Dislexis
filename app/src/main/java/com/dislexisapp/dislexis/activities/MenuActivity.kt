@@ -58,6 +58,10 @@ class MenuActivity : AppCompatActivity() {
                 //System.exit(0)
                 return true
             }
+            R.id.action_indicaciones ->{
+                startActivity(Intent(this, AboutActivity::class.java))
+                return true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
