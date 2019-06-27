@@ -53,13 +53,14 @@ class PacienteFragment : Fragment() {
             }
             val promedio =  (cont.toDouble() / AppConstants.limiteDeDesafios.toDouble())/user.examenes!!.size.toDouble()
             if(AppConstants.rolOriginal== "PacienteDef") {
-                var cadena = when (promedio) {
-                    in 0.0..0.099 -> "Puedes hacerlo mucho mejor!!"
-                    in 0.1..0.4 -> "Puedes hacerlo mejor!"
-                    in 0.41..0.7 -> "Vamos mejorando"
-                    in 0.71..0.99 -> "Vamos muy bien!"
+                var cadena = when(promedio){
+                    0.0 -> "Puedes hacerlo mucho mejor!"
+                    in 0.0 .. 0.0999999 -> "Puedes hacerlo mucho mejor!"
+                    in 0.1 .. 0.4 -> "Puedes hacerlo mejor!"
+                    in 0.4 .. 0.7 -> "Vas mejorando"
+                    in 0.7 .. 0.9999 -> "Vas fmuy bien!"
                     1.0 -> "Lo hiciste excelente!!"
-                    else -> "Def"
+                    else -> "Vas mejorando"
                 }
                 view.tv_promedio.text = cadena
             }else{

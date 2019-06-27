@@ -16,15 +16,16 @@ class ScoreActivity : AppCompatActivity() {
         val limite = intent.getStringExtra("limite").toFloat()
         val total: Double = (score/limite).toDouble()
 
-        Log.v("total", total.toString())
+        Log.v("totalScore", total.toString())
 
         var cadena = when(total){
-            in 0.0 .. 0.099 -> "Puedes hacerlo mucho mejor!"
+            0.0 -> "Puedes hacerlo mucho mejor!"
+            in 0.0 .. 0.0999999 -> "Puedes hacerlo mucho mejor!"
             in 0.1 .. 0.4 -> "Puedes hacerlo mejor!"
-            in 0.41 .. 0.7 -> "Vas mejorando"
-            in 0.71 .. 0.99 -> "Vas muy bien!"
+            in 0.4 .. 0.7 -> "Vas mejorando"
+            in 0.7 .. 0.9999 -> "Vas muy bien!"
             1.0 -> "Lo hiciste excelente!!"
-            else -> "Def"
+            else -> "Vas mejorando"
         }
         tv_score.text = cadena
         btGoMain.setOnClickListener {
