@@ -3,22 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    android:orientation="vertical">
 
+    <!-- TODO: Update blank fragment layout -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
+                android:layout_width="465dp"
+                android:layout_height="match_parent"
                 android:background="@drawable/gradient"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -31,90 +28,123 @@
                         android:layout_gravity="center"
                         android:src="@drawable/ic_account_box_black_24dp" />
                 </LinearLayout>
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginTop="10dp"
-                    android:background="@color/cardview_dark_background"/>
+                    android:background="@color/cardview_dark_background" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="3dp"
                     android:gravity="center"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="3dp">
 
                     <TextView
-                        android:textStyle="bold"
+                        android:textSize="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nombre: " />
+                        android:text="Nombre: "
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/nombre"
+                        android:textSize="30dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="Cristian Mundo"
                         android:textColor="@color/testcolorblue"
-                        android:textStyle="bold"
-                        android:text="Cristian Mundo" />
+                        android:textStyle="bold" />
                 </LinearLayout>
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginTop="10dp"
-                    android:background="@color/darkblue"/>
+                    android:background="@color/darkblue" />
+
                 <LinearLayout
-                    android:padding="3dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="3dp">
 
                     <TextView
+                        android:textSize="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:text="E-mail: " />
+                        android:text="E-mail: "
+                        android:textStyle="bold" />
 
                     <TextView
+                        android:textSize="30dp"
                         android:id="@+id/email"
-                        android:text="00086917@uca.edu.sv"
-                        android:textStyle="bold"
-                        android:textColor="@color/testcolorblue"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="45dp"
+                        android:text="00086917@uca.edu.sv"
+                        android:textColor="@color/testcolorblue"
+                        android:textStyle="bold" />
                 </LinearLayout>
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginTop="10dp"
-                    android:background="@color/cardview_dark_background"/>
+                    android:background="@color/cardview_dark_background" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="3dp"
                     android:gravity="center"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:padding="3dp">
 
                     <TextView
+                        android:textSize="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Terapeuta: "
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
 
                     <TextView
+                        android:textSize="30dp"
                         android:id="@+id/medicoRef"
-                        android:text="  Monterroza"
-                        android:textStyle="bold"
-                        android:textColor="@color/testcolorblue"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:text="  Monterroza"
+                        android:textColor="@color/testcolorblue"
+                        android:textStyle="bold" />
                 </LinearLayout>
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginTop="10dp"
-                    android:background="@color/cardview_dark_background"/>
+                    android:background="@color/cardview_dark_background" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_promedio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="100"
+                        android:textSize="70dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:textSize="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sigue asi!!" />
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -124,26 +154,5 @@
                 android:layout_height="wrap_content">
 
             </androidx.recyclerview.widget.RecyclerView>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/tv_promedio"
-                    android:layout_width="wrap_content"
-                    android:text="100"
-                    android:textStyle="bold"
-                    android:textSize="40dp"
-                    android:layout_height="wrap_content" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sigue asi!!" />
-            </LinearLayout>
         </LinearLayout>
-    </ScrollView>
 </LinearLayout>

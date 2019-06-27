@@ -6,12 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.dislexisapp.dislexis.activities.SplashActivity"
     >
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/f"
-        android:scaleType="centerCrop"
-        />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
@@ -20,11 +15,16 @@
         android:layout_height="match_parent">
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="120dp"
+            android:layout_width="150dp"
+            android:layout_gravity="center"
             android:layout_height="150dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="50dp"
             app:srcCompat="@drawable/ic_logo_nice"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="Dislexis"/>
 
         </LinearLayout>
 

@@ -21,12 +21,12 @@
         <LinearLayout
             android:gravity="center"
             android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="300dp"
+            android:layout_height="500dp">
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_diagnostic"
-                android:layout_width="160dp"
-                android:layout_height="250dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
@@ -42,8 +42,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
+                        android:layout_width="106dp"
+                        android:layout_height="96dp"
                         android:background="@drawable/cerclebackgroundgreen"
                         android:padding="10dp"
                         android:src="@drawable/ic_thumb_up_black_24dp" />
@@ -51,8 +51,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="50dp"
                         android:text="Diagnostic mode"
+                        android:textSize="30dp"
                         android:textStyle="bold" />
 
                     <View
@@ -66,6 +67,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:padding="5dp"
+                        android:textSize="20dp"
                         android:text="Realiza un diagnostico para determinar el nivel de DIslexia"
                         android:textColor="@android:color/darker_gray" />
 
@@ -76,34 +78,36 @@
             android:clipToPadding="false"
             android:gravity="center"
             android:orientation="horizontal"
-            android:layout_width="wrap_content"
+            android:layout_width="400dp"
             android:layout_height="wrap_content">
             <androidx.cardview.widget.CardView
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
-                android:layout_width="270dp"
+                android:layout_width="match_parent"
                 app:cardUseCompatPadding="true"
                 app:cardElevation="4dp"
                 app:cardCornerRadius="4dp"
-                android:layout_height="200dp"
+                android:layout_height="300dp"
                 android:layout_margin="10dp"
                 android:id="@+id/card_profile">
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="194dp"
+                    android:layout_height="match_parent"
                     android:orientation="vertical"
 
                     android:gravity="center">
+
                     <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
+                        android:layout_width="97dp"
+                        android:layout_height="91dp"
                         android:background="@drawable/cerclebackgroundpurple"
-                        android:src="@drawable/ic_history_black_24dp"                        android:padding="10dp"/>
+                        android:padding="10dp"
+                        android:src="@drawable/ic_history_black_24dp" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
-                        android:textSize="20dp"
+                        android:textSize="30dp"
                         android:layout_marginTop="10dp"
                         android:text="Historial"/>
                     <View
@@ -115,6 +119,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="63dp"
                         android:gravity="center"
+                        android:textSize="20dp"
                         android:text="Puedes seleccionar cualquiera de las siguientes dos opciones!!"
                         android:padding="5dp"
                         android:textColor="#000000"/>
@@ -128,15 +133,15 @@
         <LinearLayout
             android:gravity="center"
             android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="300dp"
+            android:layout_height="500dp">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_test"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
-                android:layout_width="160dp"
-                android:layout_height="250dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 app:cardUseCompatPadding="true"
                 app:cardElevation="10dp"
                 app:cardCornerRadius="4dp"
@@ -158,8 +163,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="50dp"
                         android:text="Test mode"
+                        android:textSize="30dp"
                         android:textStyle="bold"/>
 
                     <View
@@ -172,6 +178,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
+                        android:textSize="20dp"
                         android:padding="5dp"
                         android:text="Preguntas para mejorar el nivel de dislexia"
                         android:textColor="@android:color/darker_gray"/>

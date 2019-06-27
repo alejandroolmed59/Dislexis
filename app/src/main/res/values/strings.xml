@@ -24,4 +24,14 @@
     </string>
     <string name="action_settings">Settings</string>
     <string name="action_logout">Cerrar sesión</string>
+    <string name="texto_explain">La aplicacion cuenta con un modo diagnostico en el cual resolveras una serie preguntas las cuales ayudaran a tu terapeuta a analizar la situacion y tambien cuenta con un modo test en el cual pondras a prueba tus habilidades cognitivas tanto de comprension lectora y auditiva al arrastrar la palabra correcta a la caja que esta debajo de la foto de referencia</string>
+    <string name="text_recom">Se recomienda que al momento de iniciar sesion sea un adulto quien maneja la cuenta</string>
+    <string name="text_use">Uso de la aplicacion</string>
+    <string name="modo_prueba">Modo Prueba</string>
+    <string name="modo_diagnostico">Modo Diagnostico</string>
+    <string name="informacion_de_paciente">Informacion de paciente</string>
+    <string name="desarrolladores">Desarrolladores</string>
+    <string name="nombre1">JOSE ALEJANDRO OLMEDO ARANIVA</string>
+    <string name="nombre2">CESAR ALEJANDRO ROSALES CRUZ</string>
+    <string name="nombre3">CRISTIAN ALEXANDER MUNDO ORELLANA</string>
 </resources>

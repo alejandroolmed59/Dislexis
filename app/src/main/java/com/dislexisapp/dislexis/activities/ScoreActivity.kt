@@ -19,10 +19,10 @@ class ScoreActivity : AppCompatActivity() {
         Log.v("total", total.toString())
 
         var cadena = when(total){
-            in 0.0 .. 0.099 -> "Puedes hacerlo mucho mejor!!"
+            in 0.0 .. 0.099 -> "Puedes hacerlo mucho mejor!"
             in 0.1 .. 0.4 -> "Puedes hacerlo mejor!"
-            in 0.41 .. 0.7 -> "Vamos mejorando"
-            in 0.71 .. 0.99 -> "Vamos muy bien!"
+            in 0.41 .. 0.7 -> "Vas mejorando"
+            in 0.71 .. 0.99 -> "Vas muy bien!"
             1.0 -> "Lo hiciste excelente!!"
             else -> "Def"
         }

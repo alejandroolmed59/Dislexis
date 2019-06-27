@@ -29,6 +29,7 @@
             android:text="@string/text_recom"/>
     <TextView
             android:layout_width="wrap_content"
+            android:padding="100dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/text_margin"
             android:text="@string/texto_explain"/>
