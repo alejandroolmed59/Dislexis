@@ -63,7 +63,7 @@ class PacienteFragment : Fragment() {
                 }
                 view.tv_promedio.text = cadena
             }else{
-                view.tv_promedio.text= (promedio).toString()
+                view.tv_promedio.text= (promedio*10).toString()
             }
 
         }else{

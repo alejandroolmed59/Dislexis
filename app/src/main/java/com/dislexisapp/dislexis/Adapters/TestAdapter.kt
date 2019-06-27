@@ -32,8 +32,9 @@ class TestAdapter internal  constructor() : RecyclerView.Adapter<TestAdapter.Vie
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(examen: ExamenRetro) = with(itemView) {
+            val total: Double = (examen.correctas.toFloat() / AppConstants.limiteDeDesafios.toFloat()).toDouble()
             if(AppConstants.rolOriginal== "PacienteDef") {
-                val total: Double = (examen.correctas.toFloat() / AppConstants.limiteDeDesafios.toFloat()).toDouble()
+
                 var cadena = when (total) {
                     in 0.0..0.099 -> "Puedes hacerlo mucho mejor!!"
                     in 0.1..0.4 -> "Puedes hacerlo mejor!"
@@ -44,7 +45,7 @@ class TestAdapter internal  constructor() : RecyclerView.Adapter<TestAdapter.Vie
                 }
                 puntuacion.text = cadena
             }else {
-                puntuacion.text = examen.correctas
+                puntuacion.text = (total*10).toString()
             }
         }
     }
