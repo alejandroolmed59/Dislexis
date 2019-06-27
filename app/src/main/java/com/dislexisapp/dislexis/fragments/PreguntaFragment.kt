@@ -20,6 +20,7 @@ class PreguntaFragment : Fragment() {
 
     interface OnFragmentInteractionListener {
         fun clickSiguientePregunta(respuesta : String)
+        fun repetirPregunta()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,7 +46,9 @@ class PreguntaFragment : Fragment() {
             view.tv_respuesta1.text = pregunta.respuesta1
             view.tv_respuesta2.text= pregunta.respuesta2
 
-
+            view.pregunta.setOnClickListener{
+                listener?.repetirPregunta()
+            }
             view.ly_respuesta1.setOnClickListener{
                 listener?.clickSiguientePregunta(pregunta.respuesta1!!)
             }

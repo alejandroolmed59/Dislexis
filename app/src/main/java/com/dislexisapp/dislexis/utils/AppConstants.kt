@@ -7,7 +7,7 @@ import com.dislexisapp.dislexis.network.UserRetro
 object AppConstants {
     var user: UserRetro? = null
     var rolOriginal : String = "PacienteDef"
-    val limiteDeDesafios: Int = 2  //EN REALIDAD ES DE LAS PREGUNTAS DE LA ACTIVIDAD DIAGNOSTICO NOOO DE TEST
+    val limiteDeDesafios: Int = 5  //EN REALIDAD ES DE LAS PREGUNTAS DE LA ACTIVIDAD DIAGNOSTICO NOOO DE TEST
     val LOGGED_IN_PREF = "logged_in_status"
     val USER_PREF = "user_pref"
     val PASSWORD_PREF = "password_pref"
