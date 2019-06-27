@@ -102,7 +102,7 @@
                     android:layout_marginTop="16dp"
                     android:drawableLeft="@drawable/ic_account_box_black_24dp"
                     android:drawableTint="#294AD6"
-                    android:hint="Nombre de terapeuta"
+                    android:hint="Nombre del tutor"
                     android:singleLine="true" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -115,7 +115,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="¿Es usted paciente?"
+                    android:text="¿Es usted tutorado?"
                     android:textColor="@color/cardview_dark_background"
                     android:textSize="16sp" />
 

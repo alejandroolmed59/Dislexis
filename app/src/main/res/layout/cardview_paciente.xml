@@ -29,7 +29,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:text="Usuario:"/>
+                android:text="Tutorado:"/>
             <TextView
                 android:id="@+id/pacienteNombre"
                 android:layout_width="match_parent"
