@@ -53,7 +53,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Tu puntuación es"
+                        android:text="Rendimiento"
                         android:textSize="30dp"
                         android:textStyle="bold" />
 
@@ -69,9 +69,9 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:padding="5dp"
-                        android:text="0"
+                        android:text="Vas mejorando"
                         android:textColor="#000000"
-                        android:textSize="80dp" />
+                        android:textSize="20dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
