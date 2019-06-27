@@ -35,13 +35,14 @@ class TestAdapter internal  constructor() : RecyclerView.Adapter<TestAdapter.Vie
             val total: Double = (examen.correctas.toFloat() / AppConstants.limiteDeDesafios.toFloat()).toDouble()
             if(AppConstants.rolOriginal== "PacienteDef") {
 
-                var cadena = when (total) {
-                    in 0.0..0.099 -> "Puedes hacerlo mucho mejor!!"
-                    in 0.1..0.4 -> "Puedes hacerlo mejor!"
-                    in 0.41..0.7 -> "Vamos mejorando"
-                    in 0.71..0.99 -> "Vamos muy bien!"
+                var cadena = when(total){
+                    0.0 -> "Puedes hacerlo mucho mejor!"
+                    in 0.0 .. 0.1 -> "Puedes hacerlo mucho mejor!"
+                    in 0.1 .. 0.4 -> "Puedes hacerlo mejor!"
+                    in 0.4 .. 0.7 -> "Vas mejorando"
+                    in 0.7 .. 1.0 -> "Vas muy bien!"
                     1.0 -> "Lo hiciste excelente!!"
-                    else -> "Def"
+                    else -> "Vas mejorando"
                 }
                 puntuacion.text = cadena
             }else {

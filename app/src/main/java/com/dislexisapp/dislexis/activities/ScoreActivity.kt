@@ -20,10 +20,10 @@ class ScoreActivity : AppCompatActivity() {
 
         var cadena = when(total){
             0.0 -> "Puedes hacerlo mucho mejor!"
-            in 0.0 .. 0.0999999 -> "Puedes hacerlo mucho mejor!"
+            in 0.0 .. 0.1 -> "Puedes hacerlo mucho mejor!"
             in 0.1 .. 0.4 -> "Puedes hacerlo mejor!"
             in 0.4 .. 0.7 -> "Vas mejorando"
-            in 0.7 .. 0.9999 -> "Vas muy bien!"
+            in 0.7 .. 1.0 -> "Vas muy bien!"
             1.0 -> "Lo hiciste excelente!!"
             else -> "Vas mejorando"
         }
