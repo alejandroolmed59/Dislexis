@@ -59,7 +59,10 @@ class MenuActivity : AppCompatActivity() {
                 return true
             }
             R.id.action_indicaciones ->{
-                startActivity(Intent(this, AboutActivity::class.java))
+                val intent = Intent(this, AboutActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
+                startActivity(intent)
                 return true
             }
             else -> super.onOptionsItemSelected(item)
