@@ -67,7 +67,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Tu puntuación es"
+                            android:text="Rendimiento:"
                             android:textSize="30dp"
                             android:textStyle="bold" />
                     <TextView
@@ -78,9 +78,9 @@
                         android:gravity="center"
                         android:layout_marginRight="115dp"
                         android:padding="5dp"
-                        android:text="0"
+                        android:text="puedes hacerlo mejor"
                         android:textColor="#000000"
-                        android:textSize="80dp" />
+                        android:textSize="20dp" />
 
                     <Button
                         android:id="@+id/btGoMain"

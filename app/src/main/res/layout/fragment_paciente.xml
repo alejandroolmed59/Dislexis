@@ -16,10 +16,10 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="200dp"
                 android:gravity="center"
                 android:background="@drawable/gradient"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -31,6 +31,11 @@
                         android:layout_gravity="center"
                         android:src="@drawable/ic_account_box_black_24dp" />
                 </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_height="match_parent">
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -115,28 +120,33 @@
                     android:layout_height="1dp"
                     android:layout_marginTop="10dp"
                     android:background="@color/cardview_dark_background"/>
-
+                </LinearLayout>
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_tests"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
 
             </androidx.recyclerview.widget.RecyclerView>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:gravity="center"
                 android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="Rendimiento:"/>
 
                 <TextView
                     android:id="@+id/tv_promedio"
                     android:layout_width="wrap_content"
                     android:text="100"
                     android:textStyle="bold"
-                    android:textSize="40dp"
+                    android:textSize="30dp"
                     android:layout_height="wrap_content" />
 
                 <TextView

@@ -31,12 +31,12 @@
             android:name=".activities.RegisterActivity"
             android:label="@string/title_activity_register"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateVisible|adjustResize"/>
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
         <activity
             android:name=".activities.MenuActivity"
-            android:label="@string/title_activity_menu" />
+            />
         <activity android:name=".activities.MainActivity"
-            android:windowSoftInputMode="stateVisible|adjustResize"
+            android:windowSoftInputMode="stateHidden|adjustResize"
             >
 
         </activity>
