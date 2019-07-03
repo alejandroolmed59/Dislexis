@@ -64,7 +64,7 @@ class PacienteFragment : Fragment() {
                 }
                 view.tv_promedio.text = cadena
             }else{
-                view.tv_promedio.text= (promedio*10).toString()
+                view.tv_promedio.text= String.format("%.2f", promedio*10)+ "/10,00"
             }
 
         }else{
