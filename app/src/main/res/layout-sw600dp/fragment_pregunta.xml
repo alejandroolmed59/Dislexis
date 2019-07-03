@@ -13,11 +13,11 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="680dp"
-                android:layout_height="863dp"
+                android:layout_width="746dp"
+                android:layout_height="853dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="25dp"
-                android:background="#88FFFFFF"
+                android:background="@color/white"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="5dp"

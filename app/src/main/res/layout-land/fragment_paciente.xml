@@ -44,11 +44,12 @@
                         android:textStyle="bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nombre: " />
+                        android:background="@drawable/ic_sentiment_very_satisfied_black_24dp"/>
 
                     <TextView
                         android:id="@+id/nombre"
-                        android:layout_width="wrap_content"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="@color/testcolorblue"
                         android:textStyle="bold"
@@ -70,11 +71,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
-                        android:text="E-mail: " />
+                        android:background="@drawable/ic_email_black_24dp" />
 
                     <TextView
                         android:id="@+id/email"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
+                        android:gravity="center"
                         android:layout_height="25dp"
                         android:text="00086917@uca.edu.sv"
                         android:textColor="@color/testcolorblue"
@@ -96,7 +98,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tutor: "
+                       android:background="@drawable/ic_info_outline_black_24dp"
                         android:textStyle="bold"/>
 
                     <TextView
@@ -104,7 +106,8 @@
                         android:text="  Monterroza"
                         android:textStyle="bold"
                         android:textColor="@color/testcolorblue"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
+                        android:gravity="center"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
                 <View

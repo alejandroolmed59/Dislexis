@@ -45,9 +45,8 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
-            android:background="@color/primaryColor"
-            android:src="@drawable/diagnostic_screen"
-            />
+            android:background="@color/secondaryColor"
+            android:src="@drawable/diagnostic_screen" />
         <TextView
             android:layout_width="match_parent"
             android:textAlignment="center"
@@ -61,7 +60,7 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
-            android:background="@color/primaryColor"
+            android:background="@color/secondaryColor"
             android:src="@drawable/test_screen"
             />
 
@@ -77,7 +76,7 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:layout_gravity="center"
-            android:background="@color/primaryColor"
+            android:background="@color/secondaryColor"
             android:src="@drawable/paciente_screen"
             />
 

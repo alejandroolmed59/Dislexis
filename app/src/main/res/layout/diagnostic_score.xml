@@ -15,7 +15,7 @@
     <LinearLayout
             android:layout_width="match_parent"
             android:orientation="vertical"
-            android:background="#88FFFFFF"
+
             android:gravity="center"
             android:layout_height="match_parent">
 
@@ -27,8 +27,8 @@
             android:orientation="horizontal">
 
             <androidx.cardview.widget.CardView
-                android:layout_width="340dp"
-                android:layout_height="450dp"
+                android:layout_width="379dp"
+                android:layout_height="583dp"
                 android:layout_margin="10dp"
                 android:clickable="true"
                 android:foreground="?android:attr/selectableItemBackground"
@@ -37,8 +37,8 @@
                 app:cardUseCompatPadding="true">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="379dp"
+                    android:layout_height="573dp"
                     android:gravity="center"
                     android:orientation="vertical">
 

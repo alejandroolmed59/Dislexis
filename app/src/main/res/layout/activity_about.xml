@@ -14,7 +14,7 @@
             android:fitsSystemWindows="true"
             android:layout_height="@dimen/app_bar_height"
             android:layout_width="match_parent"
-            android:background="@drawable/sinfondo"
+            android:background="@drawable/destacado"
             android:theme="@style/AppTheme.AppBarOverlay">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout

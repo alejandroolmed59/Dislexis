@@ -12,7 +12,7 @@
         android:layout_width="635dp"
         android:layout_height="673dp"
         android:layout_gravity="center"
-        android:background="#88FFFFFF"
+        android:background="@color/white"
         android:orientation="vertical"
         android:padding="5dp"
         tools:context="com.dislexisapp.dislexis.fragments.PreguntaFragment">
@@ -90,68 +90,70 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_margin="@dimen/regular_padding"
-                    android:layout_weight="4"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/respuesta1"
-                        android:layout_width="0dp"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:background="@drawable/dynamic_test_option"
                         android:gravity="center"
                         android:padding="10dp"
+                        android:textSize="20dp"
                         android:text="Bicicleta"
                         android:textColor="#FFF"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/respuesta2"
-                        android:layout_width="0dp"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:background="@drawable/dynamic_test_option"
                         android:gravity="center"
                         android:padding="10dp"
+                        android:textSize="20dp"
                         android:text="Bicicleta"
                         android:textColor="#FFF"
                         android:textStyle="bold" />
+                </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
                     <TextView
                         android:id="@+id/respuesta3"
-                        android:layout_width="0dp"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:background="@drawable/dynamic_test_option"
                         android:gravity="center"
                         android:padding="10dp"
                         android:text="Bicicleta"
+                        android:textSize="20dp"
                         android:textColor="#FFF"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/respuesta4"
-                        android:layout_width="0dp"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:background="@drawable/dynamic_test_option"
                         android:gravity="center"
                         android:padding="10dp"
                         android:text="Bicicleta"
                         android:textColor="#FFF"
+                        android:textSize="20dp"
                         android:textStyle="bold" />
 
                 </LinearLayout>
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

@@ -10,23 +10,24 @@
 
     <LinearLayout
         android:layout_width="394dp"
-        android:layout_height="535dp"
+        android:layout_height="572dp"
         android:layout_gravity="center"
-        android:background="#88FFFFFF"
+        android:background="@color/white"
         android:orientation="vertical"
         android:padding="5dp"
         tools:context="com.dislexisapp.dislexis.fragments.PreguntaFragment">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="566dp"
             android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="399dp"
+                android:layout_height="566dp"
                 android:gravity="center"
                 android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -34,8 +35,8 @@
 
                     <ImageView
                         android:id="@+id/iv_Reto"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
                         android:layout_gravity="center"
                         android:layout_marginLeft="145dp"
                         android:baselineAligned="false" />
@@ -63,90 +64,69 @@
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
+
                 <LinearLayout
                     android:layout_width="wrap_content"
+                    android:layout_marginTop="20dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/iv_question_result"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center" />
-
-                    <TextView
-                        android:id="@+id/tv_question_result"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginLeft="15dp"
-                        android:gravity="center"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_margin="@dimen/regular_padding"
-                    android:layout_weight="4"
                     android:gravity="center"
                     android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/respuesta1"
-                        android:layout_width="0dp"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:background="@drawable/dynamic_test_option"
                         android:gravity="center"
                         android:padding="10dp"
+                        android:textSize="20dp"
                         android:text="Bicicleta"
                         android:textColor="#FFF"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/respuesta2"
-                        android:layout_width="0dp"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:background="@drawable/dynamic_test_option"
                         android:gravity="center"
                         android:padding="10dp"
+                        android:textSize="20dp"
                         android:text="Bicicleta"
                         android:textColor="#FFF"
                         android:textStyle="bold" />
+                </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
                     <TextView
                         android:id="@+id/respuesta3"
-                        android:layout_width="0dp"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:background="@drawable/dynamic_test_option"
                         android:gravity="center"
                         android:padding="10dp"
                         android:text="Bicicleta"
+                        android:textSize="20dp"
                         android:textColor="#FFF"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/respuesta4"
-                        android:layout_width="0dp"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:background="@drawable/dynamic_test_option"
                         android:gravity="center"
                         android:padding="10dp"
                         android:text="Bicicleta"
                         android:textColor="#FFF"
+                        android:textSize="20dp"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -197,7 +177,30 @@
                             android:textSize="30sp" />
                     </LinearLayout>
                 </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:orientation="horizontal">
 
+                    <ImageView
+                        android:id="@+id/iv_question_result"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:id="@+id/tv_question_result"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
