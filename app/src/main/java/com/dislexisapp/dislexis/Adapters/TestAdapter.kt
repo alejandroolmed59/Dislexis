@@ -46,7 +46,7 @@ class TestAdapter internal  constructor() : RecyclerView.Adapter<TestAdapter.Vie
                 }
                 puntuacion.text = cadena
             }else {
-                puntuacion.text = (total*10).toString()
+                puntuacion.text = String.format("%.2f", total*10)
             }
         }
     }
