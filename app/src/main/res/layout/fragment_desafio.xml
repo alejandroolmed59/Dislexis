@@ -30,33 +30,32 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="185dp"
                     android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/regresar"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="60dp"
+                        android:background="@drawable/ic_arrow_back_black_24dp"
+                        android:textColor="@color/white" />
 
                     <ImageView
                         android:id="@+id/iv_Reto"
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
+                        android:layout_width="165dp"
+                        android:layout_height="167dp"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="145dp"
+                        android:layout_marginLeft="50dp"
                         android:baselineAligned="false" />
 
                     <Button
                         android:id="@+id/repetir"
-                        android:layout_width="48dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="25dp"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_marginLeft="40dp"
                         android:background="@drawable/ic_play_circle_outline_black_24dp" />
-                    <Button
-                        android:id="@+id/regresar"
-                        android:layout_width="48dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="25dp"
-                        android:text="Anterior" />
                 </LinearLayout>
 
                 <TextView

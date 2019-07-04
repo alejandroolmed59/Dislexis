@@ -12,8 +12,8 @@ android {
         applicationId "com.dislexisapp.dislexis"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 3
-        versionName "2.0"
+        versionCode 5
+        versionName "2.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
