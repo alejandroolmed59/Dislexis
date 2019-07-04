@@ -43,6 +43,7 @@ class DesafioFragment : Fragment(), View.OnDragListener {
     interface OnFragmentInteractionListener {
         fun clickSiguienteDesafio(respuesta: String)
         fun clickValidarRespuesta(respuesta: String)
+        fun regresarPreguntaAnterior()
         fun repetirRespuesta()
     }
 
@@ -95,6 +96,9 @@ class DesafioFragment : Fragment(), View.OnDragListener {
 
         view.btn_dynamic_siguiente.setOnClickListener {
             listener?.clickSiguienteDesafio(view.tv_answer.text.toString())
+        }
+        view.regresar.setOnClickListener(){
+            listener?.regresarPreguntaAnterior()
         }
 
         return view

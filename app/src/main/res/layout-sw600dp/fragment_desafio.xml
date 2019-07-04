@@ -49,6 +49,15 @@
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="25dp"
                         android:background="@drawable/ic_play_circle_outline_black_24dp" />
+
+                    <Button
+                        android:id="@+id/regresar"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="25dp"
+                        android:text="Anterior" />
                 </LinearLayout>
 
                 <TextView

@@ -21,6 +21,7 @@ import kotlin.collections.ArrayList
 
 class TestActivity : AppCompatActivity(), DesafioFragment.OnFragmentInteractionListener {
 
+
     val limiteDePreguntas: Int = 20
 
     var contadorRespuestasCorrectas: Int = 0
@@ -57,6 +58,20 @@ class TestActivity : AppCompatActivity(), DesafioFragment.OnFragmentInteractionL
         }
     }
 
+    override fun regresarPreguntaAnterior() {
+        if(contadorDesafio-1>=0){
+            contadorDesafio -= 1
+            if(AppConstants.anteriorCorrecta){
+                contadorRespuestasCorrectas -=1
+            }
+            if(contadorRespuestasCorrectas<0 || contadorRespuestasCorrectas>limiteDePreguntas){ contadorRespuestasCorrectas=0 }
+            Log.v("regresar", contadorRespuestasCorrectas.toString())
+            initMainFragment(contadorDesafio)
+        }else{
+            Toast.makeText(this, "No se puede regresar de la primer pregunta", Toast.LENGTH_LONG).show()
+        }
+    }
+
     override fun repetirRespuesta() {
         mTTS.speak(desafioList[contadorDesafio].respuestaCorrecta, TextToSpeech.QUEUE_FLUSH, null)
     }
@@ -83,12 +98,16 @@ class TestActivity : AppCompatActivity(), DesafioFragment.OnFragmentInteractionL
     override fun clickSiguienteDesafio(respuesta: String) {
 
         if (respuesta != resources.getString(R.string.txt_answer_initial)) {
-            if (respuesta == desafioList[contadorDesafio].respuestaCorrecta) contadorRespuestasCorrectas++
+            if (respuesta == desafioList[contadorDesafio].respuestaCorrecta){
+                contadorRespuestasCorrectas++
+                AppConstants.anteriorCorrecta = true
+            }else{
+                AppConstants.anteriorCorrecta= false
+            }
 
             if (desafioList.size > contadorDesafio + 1) {
-                Log.v("contador1", contadorDesafio.toString())
                 contadorDesafio++
-                Log.v("contador2", contadorDesafio.toString())
+                Log.v("regresar", contadorRespuestasCorrectas.toString() )
                 initMainFragment(contadorDesafio)
             } else {
                 val intent =

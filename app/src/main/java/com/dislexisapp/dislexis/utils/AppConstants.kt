@@ -11,6 +11,7 @@ object AppConstants {
     val LOGGED_IN_PREF = "logged_in_status"
     val USER_PREF = "user_pref"
     val PASSWORD_PREF = "password_pref"
+    var anteriorCorrecta = false
     /*var ID_PREF = ""
     var MEDICO_PREF = ""
     var NOMBRE_PREF = ""
